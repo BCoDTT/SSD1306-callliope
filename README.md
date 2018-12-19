@@ -13,10 +13,8 @@ Forked from https://github.com/xuefengedu/pxt-oled-ssd1306_CN which bases on htt
 ## Usage
 
 1. Open editor https://makecode.calliope.cc/
-
 2. Load additional package https://github.com/BCoDTT/pxt-calliope-SSD1306
-
-3.The additional menu entry OLED-SSD1306 
+3. The additional menu entry OLED-SSD1306 is available
 
 ## Screen shots
 
