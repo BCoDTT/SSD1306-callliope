@@ -12,7 +12,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_init_terminal
     //% block="initialize OLED with height %height|width %width"
     //% icon="\uf1ec" 
-    //% shim=OLED::init_terminal
+    //% shim=OLED_SSD1306::init_terminal
     export function init(height: number = 64, width: number = 128): void {
         return;
     }
@@ -25,7 +25,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_clear_screen
     //% block="clear OLED display"
     //% icon="\uf1ec" 
-    //% shim=OLED::clearDisplay
+    //% shim=OLED_SSD1306::clearDisplay
     export function clear(): void {
         return;
     }
@@ -40,7 +40,7 @@ namespace OLED_SSD1306 {
     //% async
     //% blockId=oled_settextcursor_xy
     //% icon="\uf1ec"
-    //% shim=OLED::setTextCursorXY
+    //% shim=OLED_SSD1306::setTextCursorXY
     export function setTextCursorXY(x: number, y:number): void {
         return;
     }
@@ -55,7 +55,7 @@ namespace OLED_SSD1306 {
     //% async
     //% blockId=oled_settextcursor_row_col
     //% icon="\uf1ec"
-    //% shim=OLED::setTextCursorRowColumn
+    //% shim=OLED_SSD1306::setTextCursorRowColumn
     export function setTextCursorRowColumn(row: number, column:number): void {
         return;
     }
@@ -69,7 +69,7 @@ namespace OLED_SSD1306 {
     //% async
     //% blockId=oled_print_string
     //% icon="\uf1ec"
-    //% shim=OLED::showString
+    //% shim=OLED_SSD1306::showString
     export function showString(text: string): void {
         console.log("display: " + text);
         return;
@@ -83,7 +83,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_print_number
     //% block="show|number %number" blockGap=8
     //% async 
-    //% shim=OLED::showNumber
+    //% shim=OLED_SSD1306::showNumber
     export function showNumber(number: number): void {
         console.log("display: " + number);
         return;
@@ -98,7 +98,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_onOffDisplay
     //% block="show|onOff %onOff" blockGap=8
     //% async 
-    //% shim=OLED::onOffDisplay
+    //% shim=OLED_SSD1306::onOffDisplay
     export function onOffDisplay(onOff: boolean = true): void {
         console.log("display: " + onOff );
         return;
@@ -114,7 +114,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_drawCircle
     //% block="draw circle with x %x|y %y|r %r"
     //% icon="\uf1ec" 
-    //% shim=OLED::drawCircle
+    //% shim=OLED_SSD1306::drawCircle
     export function drawCircle(x: number = 6, y: number = 6, r: number = 3): void {
         return;
     }
@@ -129,7 +129,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_fillCircle
     //% block="fill circle with x %x|y %y|r %r"
     //% icon="\uf1ec" 
-    //% shim=OLED::fillCircle
+    //% shim=OLED_SSD1306::fillCircle
     export function fillCircle(x: number = 6, y: number = 6, r: number = 3): void {
         return;
     }
@@ -145,7 +145,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_drawLine
     //% block="draw line with x0 %x0|y0 %y0|x1 %x1|y1 %y1"
     //% icon="\uf1ec" 
-    //% shim=OLED::drawLine
+    //% shim=OLED_SSD1306::drawLine
     export function drawLine(x0: number = 1, y0: number = 1, x1: number = 3, y1: number = 3): void {
         return;
     }
@@ -161,7 +161,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_drawRect
     //% block="draw rect with x %x|y %y|w %w|h %h"
     //% icon="\uf1ec" 
-    //% shim=OLED::drawRect
+    //% shim=OLED_SSD1306::drawRect
     export function drawRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3): void {
         return;
     }
@@ -177,7 +177,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_fillRect
     //% block="fill rect with x %x|y %y|w %w|h %h"
     //% icon="\uf1ec" 
-    //% shim=OLED::fillRect
+    //% shim=OLED_SSD1306::fillRect
     export function fillRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3): void {
         return;
     }
@@ -194,7 +194,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_drawRoundRect
     //% block="draw round rect with x %x|y %y|w %w|h %h|r %r"
     //% icon="\uf1ec" 
-    //% shim=OLED::drawRoundRect
+    //% shim=OLED_SSD1306::drawRoundRect
     export function drawRoundRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3, r: number = 2): void {
         return;
     }
@@ -211,7 +211,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_fillRoundRect
     //% block="fill round rect with x %x|y %y|w %w|h %h|r %r"
     //% icon="\uf1ec" 
-    //% shim=OLED::fillRoundRect
+    //% shim=OLED_SSD1306::fillRoundRect
     export function fillRoundRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3, r: number = 2): void {
         return;
     }
@@ -229,7 +229,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_drawTriangle
     //% block="draw triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
     //% icon="\uf1ec" 
-    //% shim=OLED::drawTriangle
+    //% shim=OLED_SSD1306::drawTriangle
     export function drawTriangle(x0: number = 1, y0: number = 1, x1: number = 3, y1: number = 3, x2: number = 1, y2: number = 3): void {
         return;
     }
@@ -247,7 +247,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_fillTriangle
     //% block="fill triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
     //% icon="\uf1ec" 
-    //% shim=OLED::fillTriangle
+    //% shim=OLED_SSD1306::fillTriangle
     export function fillTriangle(x0: number = 1, y0: number = 1, x1: number = 3, y1: number = 3, x2: number = 1, y2: number = 3): void {
         return;
     }
