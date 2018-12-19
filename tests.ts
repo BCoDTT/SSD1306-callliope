@@ -1,12 +1,11 @@
 // tests go here; this will not be compiled when this package is used as a library
 
-OLED-SSD1306.init(64, 128)
-OLED-SSD1306.showString("hello, world!")
-OLED-SSD1306.showString("counter:")
+OLED_SSD1306.init(64, 128)
+OLED_SSD1306.showString("hello, world!")
+OLED_SSD1306.showString("counter:")
 let item = 0
 basic.forever(() => {
     basic.pause(1000)
     item += 1
-    OLED-SSD1306.showNumber(item)
+    OLED_SSD1306.showNumber(item)
 })
-
