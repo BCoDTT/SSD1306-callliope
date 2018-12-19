@@ -30,15 +30,16 @@ namespace OLED {
 
     /**
      * 在OLED显示器上打印字符串
-     * @param x,y coordinates of text output
+     * @param x x (in pixels)
+     * @param y y (in pixels)
      */
     //% weight=99 blockGap=8
-    //% block="setTextCursor|number %x, number %y" 
+    //% block="set text cursor to position x %x|y %y" 
     //% async
     //% blockId=oled_settextcursor
     //% icon="\uf1ec"
     //% shim=OLED::setTextCursor
-    export function setTextCursor(text: string): void {
+    export function setTextCursor(x: number, y:number): void {
         return;
     }
     
