@@ -1,7 +1,7 @@
 {
     "name": "OLED_SSD1306",
     "version": "1.0.0",
-    "description": "Driver for OLED using controller chip SSD1306 for calliiope mini for MakeCode (PXT)",
+    "description": "Handels OLED using controller chip SSD1306 for calliope mini in MakeCode (PXT)",
     "license": "MIT",
     "dependencies": {
         "core": "*"
