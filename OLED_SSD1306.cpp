@@ -39,7 +39,7 @@ namespace OLED_SSD1306 {
 	void setTextCursorRowColumn(int row, int column) {
 		row = row * FONT_HEIGHT;
 		column = column * FONT_WIDTH;
-		oled->setTextCursor(row, column);
+		oled->setTextCursor(column, row);
 	}
 	
 	
