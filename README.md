@@ -52,7 +52,7 @@ OLED.setTextCursorToXY(x, y)
 Sets the text cursor to the row/column for printing  a string on the OLED module.
 
 ```sig
-OLED.setTextCursorToRowColumn(x, y)
+OLED.setTextCursorToRowColumn(row, column)
 ```
 
 
