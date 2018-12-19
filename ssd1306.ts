@@ -1,6 +1,6 @@
 //% icon="\uf26c"
-//% color="255" weight="90" block="OLED-SSD1306"
-namespace OLED-SSD1306 {
+//% color="255" weight="90" block="OLED_SSD1306"
+namespace OLED_SSD1306 {
 
     
     /**
