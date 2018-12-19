@@ -3,7 +3,6 @@ Forked from https://github.com/xuefengedu/pxt-oled-ssd1306_CN
 # SSD1306 OLED driver for MakeCode (PXT) for the calliope mini board
 
 1. Initial Upload
-```
  
 ## Usage
 
@@ -11,11 +10,14 @@ Forked from https://github.com/xuefengedu/pxt-oled-ssd1306_CN
 
 2. You'll get an additional menu entry "OLED"
 
+
 ## Screen shots
--
+
+None
 
 
-# Initial based on SSD1306 OLED MakeCode Package [![Build Status](https://travis-ci.org/Tinkertanker/pxt-oled-ssd1306.svg?branch=master)](https://travis-ci.org/Tinkertanker/pxt-oled-ssd1306)
+# SSD1306 OLED MakeCode Package [![Build Status](https://travis-ci.org/Tinkertanker/pxt-oled-ssd1306.svg?branch=master)](https://travis-ci.org/Tinkertanker/pxt-oled-ssd1306)
+
 
 This is the MakeCode Package for SSD1306 OLED controller, based on the Adafruit Arduino library available [here](https://github.com/adafruit/Adafruit_SSD1306).
 
@@ -26,7 +28,7 @@ This is the MakeCode Package for SSD1306 OLED controller, based on the Adafruit 
 ### Initialize OLED Display
 Initializes the OLED display.
 
-Sets up the OLED display and prepares it for use by the calliope mini
+Sets up the OLED display and prepares it for use by the calliope mini.
 
 ```sig
 OLED.init(64, 128);
@@ -39,7 +41,7 @@ This block must be placed before any of the ``show`` blocks.
 Displays a string on the OLED module.
 
 ```sig
-OLED.showString("hello, micro:bit!")
+OLED.showString("Hello from calliope!")
 ```
 
 The ``init`` block must be placed before this.
@@ -79,8 +81,7 @@ basic.forever(() => {
 
 ## Supported targets
 
-* for PXT/microbit
-
+* for PXT/calliope mini
 ## Footnotes
 
 1.  Datasheet https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
