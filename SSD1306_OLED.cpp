@@ -2,8 +2,10 @@
 #include "Adafruit_SSD1306.h"
 using namespace pxt;
 
-namespace OLED {
+namespace OLED_SSD1306 {
 	#define SSD1306_ADDRESS 0x78
+	#define FONT_WIDTH 6
+	#define FONT_HEIGHT 8
 	#undef printf
 	
 	MicroBitI2C i2c(I2C_SDA0, I2C_SCL0);
@@ -16,6 +18,7 @@ namespace OLED {
 		oled->display();
 	}
 	
+	
 	//%
 	void init_terminal(int height = 64, int width = 128){
 		if (oled != NULL) delete oled;
@@ -25,25 +28,37 @@ namespace OLED {
 		oled->setTextCursor(0, 0);
 	}
 
+	
 	//%
-	void setTextCursor(int x, int y) {
+	void setTextCursorXY(int x, int y) {
 		oled->setTextCursor(x, y);
 	}
 	
+	
 	//%
-    void showString(StringData *text) {
+	void setTextCursorRowColumn(int row, int column) {
+		row = row * FONT_HEIGHT
+		column = column * FONT_WIDTH
+		oled->setTextCursor(row, column);
+	}
+	
+	
+	//%
+	void showString(StringData *text) {
 		oled->printf("%s\n", text->data);
 		oled->display();
-    }
+	}
     
-    //%
-    void showNumber(int number) {
+	
+	//%
+	void showNumber(int number) {
 		oled->printf("%d\n", number);
 		oled->display();
 	}
     
-    //%
-    void onOffDisplay(bool onOff = true) {
+	
+	//%
+	void onOffDisplay(bool onOff = true) {
 		oled->isDisplay = onOff;
 		if(onOff)
 		{
@@ -51,12 +66,14 @@ namespace OLED {
 		}
 	}
 
+	
 	//%
 	void clearDisplay(){
 		oled->clearDisplay();
 		oled->display();
 	}
 
+	
 	//%
 	void drawCircle(int x, int y, int r){
 		oled->drawCircle(x, y, r, WHITE);
@@ -66,6 +83,7 @@ namespace OLED {
 		}
 	}
 
+	
 	//%
 	void fillCircle(int x, int y, int r){
 		oled->fillCircle(x, y, r, WHITE);
