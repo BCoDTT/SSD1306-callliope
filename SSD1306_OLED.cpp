@@ -26,6 +26,11 @@ namespace OLED {
 	}
 	
 	//%
+	void setTextCursor(int x, int y){
+		oled->setTextCursor(x, y);
+	}
+	
+	//%
     void showString(StringData *text) {
 		oled->printf("%s\n", text->data);
 		oled->display();
