@@ -7,7 +7,7 @@ namespace OLED {
      * @param height height (in pixels)
      * @param width width (in pixels)
      */
-    //% weight=100
+    //% weight=101
     //% blockId=oled_init_terminal
     //% block="initialize OLED with height %height|width %width"
     //% icon="\uf1ec" 
@@ -19,7 +19,7 @@ namespace OLED {
     /**
      * 清除OLED屏幕
      */
-    //% weight=99
+    //% weight=100
     //% blockId=oled_clear_screen
     //% block="clear OLED display"
     //% icon="\uf1ec" 
@@ -28,6 +28,20 @@ namespace OLED {
         return;
     }
 
+    /**
+     * 在OLED显示器上打印字符串
+     * @param x,y coordinates of text output
+     */
+    //% weight=99 blockGap=8
+    //% block="setTextCursor|number %x, number %y" 
+    //% async
+    //% blockId=oled_settextcursor
+    //% icon="\uf1ec"
+    //% shim=OLED::setTextCursor
+    export function setTextCursor(text: string): void {
+        return;
+    }
+    
     /**
      * 在OLED显示器上打印字符串
      * @param text text to display
