@@ -4,7 +4,7 @@ namespace OLED_SSD1306 {
 
     
     /**
-     * Initialises the i2c OLED display driven by SSD1306 controller
+     * Initializes the i2c OLED display driven by SSD1306 controller
      * @param height height (in pixels)
      * @param width width (in pixels)
      */
