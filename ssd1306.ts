@@ -41,14 +41,14 @@ namespace OLED_SSD1306 {
     //% blockId=oled_settextcursor_xy
     //% icon="\uf1ec"
     //% shim=OLED_SSD1306::setTextCursorXY
-    export function setTextCursorXY(x: number, y:number): void {
+    export function setTextCursorXY(x: number, y: number): void {
         return;
     }
 
     /**
      * Sets the text cursor to absolute row/column
-     * @param row row (in pixels)
-     * @param column column (in pixels)
+     * @param row row
+     * @param column column
      */
     //% weight=99 blockGap=8
     //% block="set text cursor to row %row|column %column" 
@@ -56,7 +56,7 @@ namespace OLED_SSD1306 {
     //% blockId=oled_settextcursor_row_col
     //% icon="\uf1ec"
     //% shim=OLED_SSD1306::setTextCursorRowColumn
-    export function setTextCursorRowColumn(row: number, column:number): void {
+    export function setTextCursorRowColumn(row: number, column: number): void {
         return;
     }
     
