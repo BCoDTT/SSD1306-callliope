@@ -96,7 +96,7 @@ namespace OLED_SSD1306 {
      */
     //% weight=96
     //% blockId=oled_onOffDisplay
-    //% block="show|onOff %onOff" blockGap=8
+    //% block="activate display|onOff %onOff" blockGap=8
     //% async 
     //% shim=OLED_SSD1306::onOffDisplay
     export function onOffDisplay(onOff: boolean = true): void {
