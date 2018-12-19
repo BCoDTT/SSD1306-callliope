@@ -1,7 +1,7 @@
 {
     "name": "SSD1306_OLED",
-    "version": "1.0.0",
-    "description": "SSD1306 OLED driver for calliope mini (pxt)",
+    "version": "1.1.0",
+    "description": "SSD1306 OLED液晶micro:bit pxt扩展包",
     "license": "MIT",
     "dependencies": {
         "core": "*"
