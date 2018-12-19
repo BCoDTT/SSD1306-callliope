@@ -3,7 +3,8 @@ Forked from https://github.com/xuefengedu/pxt-oled-ssd1306_CN which bases on htt
 # SSD1306 OLED driver for calliope mini for MakeCode (PXT)
 
 1. Forked
-2. Add more functions:
+2. ! Warning: under development !
+3. Added more functions:
 ```
     "OLED.setTextCursorToXY|block": " x %x|y %y",
     "OLED.setTextCursorToRowCol|block": " row %row|column %column"
