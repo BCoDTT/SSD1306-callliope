@@ -1,13 +1,14 @@
 //% icon="\uf26c"
-//% color="255" weight="90" block="OLED"
-namespace OLED {
+//% color="255" weight="90" block="OLED-SSD1306"
+namespace OLED-SSD1306 {
 
+    
     /**
-     * 初始化i2c OLED显示器
+     * Initialises the i2c OLED display driven by SSD1306 controller
      * @param height height (in pixels)
      * @param width width (in pixels)
      */
-    //% weight=101
+    //% weight=102
     //% blockId=oled_init_terminal
     //% block="initialize OLED with height %height|width %width"
     //% icon="\uf1ec" 
@@ -16,10 +17,11 @@ namespace OLED {
         return;
     }
 
+    
     /**
-     * 清除OLED屏幕
+     * Clear OLED display
      */
-    //% weight=100
+    //% weight=101
     //% blockId=oled_clear_screen
     //% block="clear OLED display"
     //% icon="\uf1ec" 
@@ -29,22 +31,37 @@ namespace OLED {
     }
 
     /**
-     * 在OLED显示器上打印字符串
+     * Sets the text cursor to absolute position x/y
      * @param x x (in pixels)
      * @param y y (in pixels)
      */
-    //% weight=99 blockGap=8
+    //% weight=100 blockGap=8
     //% block="set text cursor to position x %x|y %y" 
     //% async
-    //% blockId=oled_settextcursor
+    //% blockId=oled_settextcursor_xy
     //% icon="\uf1ec"
-    //% shim=OLED::setTextCursor
-    export function setTextCursor(x: number, y:number): void {
+    //% shim=OLED::setTextCursorXY
+    export function setTextCursorXY(x: number, y:number): void {
+        return;
+    }
+
+    /**
+     * Sets the text cursor to absolute row/column
+     * @param row row (in pixels)
+     * @param column column (in pixels)
+     */
+    //% weight=99 blockGap=8
+    //% block="set text cursor to row %row|column %column" 
+    //% async
+    //% blockId=oled_settextcursor_row_col
+    //% icon="\uf1ec"
+    //% shim=OLED::setTextCursorRowColumn
+    export function setTextCursorRowColumn(row: number, column:number): void {
         return;
     }
     
     /**
-     * 在OLED显示器上打印字符串
+     * Prints a string on the OLED display at the current text cursor position
      * @param text text to display
      */
     //% weight=98 blockGap=8
@@ -59,7 +76,7 @@ namespace OLED {
     }
 
     /**
-     * 在OLED显示器上打印数字
+     * Prints a number on the OLED display at the current text cursor position
      * @param number number to display
      */
     //% weight=97
@@ -74,7 +91,7 @@ namespace OLED {
 
 
     /**
-     * 在OLED显示器上启用画图显示或者关闭画图显示
+     * Switch OLED display on/off
      * @param onOffDisplay onOffDisplay to on or off display
      */
     //% weight=96
@@ -88,7 +105,7 @@ namespace OLED {
     }
 
     /**
-     * 画圆
+     * Draws a circle on the OLED display at absolute coordinates x/y with radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param r r (in pixels)
@@ -103,7 +120,7 @@ namespace OLED {
     }
 
     /**
-     * 填充圆
+     * Draws a filled circle on the OLED display at absolute coordinates x/y with radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param r r (in pixels)
@@ -118,7 +135,7 @@ namespace OLED {
     }
 
     /**
-     * 画线
+     * Draws a line on the OLED display from absolute coordinates x0/y0 to x1/y1
      * @param x0 x0 (in pixels)
      * @param y0 y0 (in pixels)
      * @param x1 x1 (in pixels)
@@ -134,7 +151,7 @@ namespace OLED {
     }
 
     /**
-     * 画矩形
+     * Draws a rectangle on the OLED display at absolute coordinates x/y with with w and height h
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
@@ -150,7 +167,7 @@ namespace OLED {
     }
 
     /**
-     * 填充矩形
+     * Draws a filled rectangle on the OLED display at absolute coordinates x/y with with w and height h
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
@@ -166,7 +183,7 @@ namespace OLED {
     }
 
     /**
-     * 画带圆角的矩形
+     * Draws a round(?) rectangle on the OLED display at absolute coordinates x/y with with w and height h and radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
@@ -183,7 +200,7 @@ namespace OLED {
     }
 
     /**
-     * 填充带圆角的矩形
+     * Draws a filled round(?) rectangle on the OLED display at absolute coordinates x/y with with w and height h and radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
@@ -200,7 +217,7 @@ namespace OLED {
     }
 
     /**
-     * 画三角形
+     * Draws a triangle on the OLED display with points x0/y0, x1/y1, x2/y2
      * @param x0 x0 (in pixels)
      * @param y0 y0 (in pixels)
      * @param x1 x1 (in pixels)
@@ -218,7 +235,7 @@ namespace OLED {
     }
 
     /**
-     * 填充三角形
+     * Draws a filled triangle on the OLED display with points x0/y0, x1/y1, x2/y2
      * @param x0 x0 (in pixels)
      * @param y0 y0 (in pixels)
      * @param x1 x1 (in pixels)
