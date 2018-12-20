@@ -199,16 +199,20 @@ namespace OLED_SSD1306 {
      * @param w w (in pixels)
      * @param h h (in pixels)
      * @param r r (in pixels)
-     */
-    //% weight=90
-    //% blockId=oled_drawRoundRect
-    //% block="draw rect with rounded corners with x %x|y %y|w %w|h %h|r %r"
-    //% icon="\uf1ec" 
-    //% shim=OLED_SSD1306::drawRoundRect
-    export function drawRoundRect(x: number, y: number, w: number, h: number, r: number): void {
-        return;
-    }
-
+     * 
+     * DOES NOT WORK YET !
+     *
+     *
+     * //% weight=90
+     * //% blockId=oled_drawRoundRect
+     * //% block="draw rect with rounded corners with x %x|y %y|w %w|h %h|r %r"
+     * //% icon="\uf1ec" 
+     * //% shim=OLED_SSD1306::drawRoundRect
+     * export function drawRoundRect(x: number, y: number, w: number, h: number, r: number): void {
+     *   return;
+     * }
+    */
+    
     
     /**
      * Draws a filled rectangle with rounded corners on the OLED display at absolute coordinates x/y, using width w, height h and corner radius r
@@ -217,15 +221,19 @@ namespace OLED_SSD1306 {
      * @param w w (in pixels)
      * @param h h (in pixels)
      * @param r r (in pixels)
+     * 
+     * DOES NOT WORK YET !
+     *
+     *
+     * //% weight=89
+     * //% blockId=oled_fillRoundRect
+     * //% block="fill round rect with x %x|y %y|w %w|h %h|r %r"
+     * //% icon="\uf1ec" 
+     * //% shim=OLED_SSD1306::fillRoundRect
+     * export function fillRoundRect(x: number, y: number, w: number, h: number, r: number): void {
+     *   return;
+     * }
      */
-    //% weight=89
-    //% blockId=oled_fillRoundRect
-    //% block="fill round rect with x %x|y %y|w %w|h %h|r %r"
-    //% icon="\uf1ec" 
-    //% shim=OLED_SSD1306::fillRoundRect
-    export function fillRoundRect(x: number, y: number, w: number, h: number, r: number): void {
-        return;
-    }
 
     
     /**
