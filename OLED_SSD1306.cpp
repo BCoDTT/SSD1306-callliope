@@ -150,11 +150,13 @@ namespace OLED_SSD1306 {
 
 	
 	//%
-	void showProgress(int x1, int y1, int x2, int y2, int progress) {
-		int diff = x2 - x1;
+	void showProgress(int x, int y, int width, int height, int progress) {
+		int x2 = x + width;
+		int y2 = y + height;
+		int diff = x2 - x;
 		if(oled->isDisplay) {
-			drawRect(x1,y1,x2,y2);
-			fillRect(x1,y1,progress*diff/100,y2);
+			drawRect(x,y,x2,y2);
+			fillRect(x,y,progress*diff/100,y2);
 		}
 	}
 	
