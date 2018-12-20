@@ -100,11 +100,11 @@ namespace OLED_SSD1306 {
      */
     //% weight=96
     //% blockId=oled_onOffDisplay
-    //% block="activate OLED display|yes %onOff" blockGap=8
+    //% block="switch OLED display|on %on" blockGap=8
     //% async 
     //% shim=OLED_SSD1306::onOffDisplay
-    export function onOffDisplay(yes: boolean = true): void {
-        console.log("display: " + yes );
+    export function onOffDisplay(on: boolean = true): void {
+        console.log("display: " + on );
         return;
     }
 
