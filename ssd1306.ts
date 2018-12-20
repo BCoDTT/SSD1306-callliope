@@ -115,7 +115,7 @@ namespace OLED_SSD1306 {
     //% block="draw circle with x %x|y %y|r %r"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::drawCircle
-    export function drawCircle(x: number = 6, y: number = 6, r: number = 3): void {
+    export function drawCircle(x: number, y: number, r: number): void {
         return;
     }
 
@@ -130,7 +130,7 @@ namespace OLED_SSD1306 {
     //% block="fill circle with x %x|y %y|r %r"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::fillCircle
-    export function fillCircle(x: number = 6, y: number = 6, r: number = 3): void {
+    export function fillCircle(x: number, y: number, r: number): void {
         return;
     }
 
@@ -146,7 +146,7 @@ namespace OLED_SSD1306 {
     //% block="draw line with x0 %x0|y0 %y0|x1 %x1|y1 %y1"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::drawLine
-    export function drawLine(x0: number = 1, y0: number = 1, x1: number = 3, y1: number = 3): void {
+    export function drawLine(x0: number, y0: number, x1: number, y1: number): void {
         return;
     }
 
