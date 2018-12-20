@@ -8,7 +8,6 @@ namespace OLED_SSD1306 {
      * @param height height (in pixels)
      * @param width width (in pixels)
      */
-    //% weight=102
     //% blockId=oled_init_terminal
     //% block="initialize OLED with height %height|width %width"
     //% icon="\uf1ec" 
@@ -21,7 +20,6 @@ namespace OLED_SSD1306 {
     /**
      * Clear OLED display
      */
-    //% weight=101
     //% blockId=oled_clear_screen
     //% block="clear OLED display"
     //% icon="\uf1ec" 
@@ -36,7 +34,6 @@ namespace OLED_SSD1306 {
      * @param x x (in pixels)
      * @param y y (in pixels)
      */
-    //% weight=100 blockGap=8
     //% block="set text cursor to position x %x|y %y" 
     //% async
     //% blockId=oled_settextcursor_xy
@@ -52,7 +49,6 @@ namespace OLED_SSD1306 {
      * @param row row
      * @param column column
      */
-    //% weight=99 blockGap=8
     //% block="set text cursor to row %row|column %column" 
     //% async
     //% blockId=oled_settextcursor_row_col
@@ -67,7 +63,6 @@ namespace OLED_SSD1306 {
      * Prints a string on the OLED display at the current text cursor position
      * @param text text to display
      */
-    //% weight=98 blockGap=8
     //% block="show|string %text" 
     //% async
     //% blockId=oled_print_string
@@ -83,7 +78,6 @@ namespace OLED_SSD1306 {
      * Prints a number on the OLED display at the current text cursor position
      * @param number number to display
      */
-    //% weight=97
     //% blockId=oled_print_number
     //% block="show|number %number" blockGap=8
     //% async 
@@ -98,7 +92,6 @@ namespace OLED_SSD1306 {
      * Switch OLED display on/off
      * @param onOffDisplay onOffDisplay to on or off display
      */
-    //% weight=96
     //% blockId=oled_onOffDisplay
     //% block="switch OLED display|on %on" blockGap=8
     //% async 
@@ -115,7 +108,6 @@ namespace OLED_SSD1306 {
      * @param y y (in pixels)
      * @param r r (in pixels)
      */
-    //% weight=95
     //% blockId=oled_drawCircle
     //% block="draw circle with x %x|y %y|r %r"
     //% icon="\uf1ec" 
@@ -131,7 +123,6 @@ namespace OLED_SSD1306 {
      * @param y y (in pixels)
      * @param r r (in pixels)
      */
-    //% weight=94
     //% blockId=oled_fillCircle
     //% block="fill circle with x %x|y %y|r %r"
     //% icon="\uf1ec" 
@@ -148,7 +139,6 @@ namespace OLED_SSD1306 {
      * @param x1 x1 (in pixels)
      * @param y1 y1 (in pixels)
      */
-    //% weight=93
     //% blockId=oled_drawLine
     //% block="draw line with x0 %x0|y0 %y0|x1 %x1|y1 %y1"
     //% icon="\uf1ec" 
@@ -165,7 +155,6 @@ namespace OLED_SSD1306 {
      * @param w w (in pixels)
      * @param h h (in pixels)
      */
-    //% weight=92
     //% blockId=oled_drawRect
     //% block="draw rect with x %x|y %y|w %w|h %h"
     //% icon="\uf1ec" 
@@ -182,7 +171,6 @@ namespace OLED_SSD1306 {
      * @param w w (in pixels)
      * @param h h (in pixels)
      */
-    //% weight=91
     //% blockId=oled_fillRect
     //% block="fill rect with x %x|y %y|w %w|h %h"
     //% icon="\uf1ec" 
