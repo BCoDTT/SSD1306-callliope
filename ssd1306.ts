@@ -30,6 +30,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Sets the text cursor to absolute position x/y
      * @param x x (in pixels)
@@ -45,6 +46,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Sets the text cursor to absolute row/column
      * @param row row
@@ -59,6 +61,7 @@ namespace OLED_SSD1306 {
     export function setTextCursorRowColumn(row: number, column: number): void {
         return;
     }
+   
     
     /**
      * Prints a string on the OLED display at the current text cursor position
@@ -75,6 +78,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Prints a number on the OLED display at the current text cursor position
      * @param number number to display
@@ -96,14 +100,15 @@ namespace OLED_SSD1306 {
      */
     //% weight=96
     //% blockId=oled_onOffDisplay
-    //% block="activate display|onOff %onOff" blockGap=8
+    //% block="activate OLED display|yes %onOff" blockGap=8
     //% async 
     //% shim=OLED_SSD1306::onOffDisplay
-    export function onOffDisplay(onOff: boolean = true): void {
-        console.log("display: " + onOff );
+    export function onOffDisplay(yes: boolean = true): void {
+        console.log("display: " + yes );
         return;
     }
 
+    
     /**
      * Draws a circle on the OLED display at absolute coordinates x/y with radius r
      * @param x x (in pixels)
@@ -119,6 +124,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Draws a filled circle on the OLED display at absolute coordinates x/y with radius r
      * @param x x (in pixels)
@@ -134,6 +140,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Draws a line on the OLED display from absolute coordinates x0/y0 to x1/y1
      * @param x0 x0 (in pixels)
@@ -150,6 +157,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Draws a rectangle on the OLED display at absolute coordinates x/y, using width w and height h
      * @param x x (in pixels)
@@ -166,6 +174,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Draws a filled rectangle on the OLED display at absolute coordinates x/y, using  width w and height h
      * @param x x (in pixels)
@@ -184,7 +193,7 @@ namespace OLED_SSD1306 {
 
     
     /**
-     * Draws a round rectangle on the OLED display at absolute coordinates x/y, using width w, height h and radius r
+     * Draws a rectangle with rounded corners on the OLED display at absolute coordinates x/y, using width w, height h and corner radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
@@ -193,7 +202,7 @@ namespace OLED_SSD1306 {
      */
     //% weight=90
     //% blockId=oled_drawRoundRect
-    //% block="draw round rect with x %x|y %y|w %w|h %h|r %r"
+    //% block="draw rect with rounded corners with x %x|y %y|w %w|h %h|r %r"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::drawRoundRect
     export function drawRoundRect(x: number, y: number, w: number, h: number, r: number): void {
@@ -202,7 +211,7 @@ namespace OLED_SSD1306 {
 
     
     /**
-     * Draws a filled round rectangle on the OLED display at absolute coordinates x/y, using width w, height h and radius r
+     * Draws a filled rectangle with rounded corners on the OLED display at absolute coordinates x/y, using width w, height h and corner radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
@@ -237,6 +246,7 @@ namespace OLED_SSD1306 {
         return;
     }
 
+    
     /**
      * Draws a filled triangle on the OLED display with points x0/y0, x1/y1, x2/y2
      * @param x0 x0 (in pixels)
