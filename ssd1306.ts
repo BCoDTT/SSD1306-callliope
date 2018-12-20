@@ -244,15 +244,19 @@ namespace OLED_SSD1306 {
      * @param y1 y1 (in pixels)
      * @param x2 x2 (in pixels)
      * @param y2 y2 (in pixels)
+     * 
+     * DOES NOT WORK YET !
+     *
+     *
+     * //% weight=88
+     * //% blockId=oled_drawTriangle
+     * //% block="draw triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
+     * //% icon="\uf1ec" 
+     * //% shim=OLED_SSD1306::drawTriangle
+     * export function drawTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void {
+     *    return;
+     * }
      */
-    //% weight=88
-    //% blockId=oled_drawTriangle
-    //% block="draw triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
-    //% icon="\uf1ec" 
-    //% shim=OLED_SSD1306::drawTriangle
-    export function drawTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void {
-        return;
-    }
 
     
     /**
@@ -263,15 +267,18 @@ namespace OLED_SSD1306 {
      * @param y1 y1 (in pixels)
      * @param x2 x2 (in pixels)
      * @param y2 y2 (in pixels)
+     * 
+     * DOES NOT WORK YET !
+     *
+     * //% weight=87
+     * //% blockId=oled_fillTriangle
+     * //% block="fill triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
+     * //% icon="\uf1ec" 
+     * //% shim=OLED_SSD1306::fillTriangle
+     * export function fillTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void {
+     *    return;
+     * }
      */
-    //% weight=87
-    //% blockId=oled_fillTriangle
-    //% block="fill triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
-    //% icon="\uf1ec" 
-    //% shim=OLED_SSD1306::fillTriangle
-    export function fillTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void {
-        return;
-    }
     
     
     /**
@@ -283,7 +290,7 @@ namespace OLED_SSD1306 {
      * @param progress progress (in percentage)
      */
     //% blockId=oled_show_progress
-    //% block="show progress bar with x %x|y %y|width %width|height %height|progress %progress|"
+    //% block="show progress bar with x %x|y %y|width %width|height %height|progress %progress"
     //% async 
     //% shim=OLED_SSD1306::showProgress
     export function showProgress(x: number, y: number, width: number, height: number, progress: number): void {
