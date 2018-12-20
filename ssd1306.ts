@@ -183,7 +183,7 @@ namespace OLED_SSD1306 {
     }
 
     /**
-     * Draws a round(?) rectangle on the OLED display at absolute coordinates x/y with with w and height h and radius r
+     * Draws a round rectangle on the OLED display at absolute coordinates x/y with width w, height h and radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
@@ -200,7 +200,7 @@ namespace OLED_SSD1306 {
     }
 
     /**
-     * Draws a filled round(?) rectangle on the OLED display at absolute coordinates x/y with with w and height h and radius r
+     * Draws a filled round rectangle on the OLED display at absolute coordinates x/y with width w, height h and radius r
      * @param x x (in pixels)
      * @param y y (in pixels)
      * @param w w (in pixels)
