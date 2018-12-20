@@ -151,11 +151,10 @@ bvg
 	
 	//%
 	void showProgress(int x, int y, int width, int height, int progress) {
-		int x2 = x + width;
-		int y2 = y + height;
-		int diff = x2 - x;
-		drawRect(x,y,x2,y2);
-		fillRect(x,y,progress*diff/100,y2);
+		int widthPb;
+		widthPb = progress * width / 100;		
+		drawRect(x,y,width,height);
+		fillRect(x,y,widthPb,height);
 	}
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
