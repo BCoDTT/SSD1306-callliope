@@ -162,7 +162,7 @@ namespace OLED_SSD1306 {
     //% block="draw rect with x %x|y %y|w %w|h %h"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::drawRect
-    export function drawRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3): void {
+    export function drawRect(x: number, y: number, w: number, h: number): void {
         return;
     }
 
@@ -178,7 +178,7 @@ namespace OLED_SSD1306 {
     //% block="fill rect with x %x|y %y|w %w|h %h"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::fillRect
-    export function fillRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3): void {
+    export function fillRect(x: number, y: number, w: number, h: number): void {
         return;
     }
 
@@ -195,7 +195,7 @@ namespace OLED_SSD1306 {
     //% block="draw round rect with x %x|y %y|w %w|h %h|r %r"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::drawRoundRect
-    export function drawRoundRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3, r: number = 2): void {
+    export function drawRoundRect(x: number, y: number, w: number, h: number, r: number): void {
         return;
     }
 
@@ -212,7 +212,7 @@ namespace OLED_SSD1306 {
     //% block="fill round rect with x %x|y %y|w %w|h %h|r %r"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::fillRoundRect
-    export function fillRoundRect(x: number = 1, y: number = 1, w: number = 3, h: number = 3, r: number = 2): void {
+    export function fillRoundRect(x: number, y: number, w: number, h: number, r: number): void {
         return;
     }
 
