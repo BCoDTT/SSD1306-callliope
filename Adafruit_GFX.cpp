@@ -210,14 +210,15 @@ void Adafruit_GFX::fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t
 }
 #endif
 
+
 #if defined(GFX_WANT_ABSTRACTS)
 // draw a rectangle
 void Adafruit_GFX::drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
 {
-    drawFastHLine(x, y, w, color);
-    drawFastHLine(x, y+h-1, w, color);
-    drawFastVLine(x, y, h, color);
-    drawFastVLine(x+w-1, y, h, color);
+    drawFastHLine(x,     y,     w, color);
+    drawFastHLine(x,     y+h-1, w, color);
+    drawFastVLine(x,     y,     h, color);
+    drawFastVLine(x+w-1, y,     h, color);
 }
 
 void Adafruit_GFX::drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color)
@@ -237,8 +238,9 @@ void Adafruit_GFX::drawRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int
     // smarter version
     drawFastHLine(x+r  , y    , w-2*r, color); // Top
     drawFastHLine(x+r  , y+h-1, w-2*r, color); // Bottom
-    drawFastVLine(  x    , y+r  , h-2*r, color); // Left
-    drawFastVLine(  x+w-1, y+r  , h-2*r, color); // Right
+    drawFastVLine(x    , y+r  , h-2*r, color); // Left
+    drawFastVLine(x+w-1, y+r  , h-2*r, color); // Right
+	
     // draw four corners
     drawCircleHelper(x+r    , y+r    , r, 1, color);
     drawCircleHelper(x+w-r-1, y+r    , r, 2, color);
