@@ -230,7 +230,7 @@ namespace OLED_SSD1306 {
     //% block="draw triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::drawTriangle
-    export function drawTriangle(x0: number = 1, y0: number = 1, x1: number = 3, y1: number = 3, x2: number = 1, y2: number = 3): void {
+    export function drawTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void {
         return;
     }
 
@@ -248,7 +248,7 @@ namespace OLED_SSD1306 {
     //% block="fill triangle with x0 %x0|y0 %y0|x1 %x1|y1 %y1|x2 %x2|y2 %y2"
     //% icon="\uf1ec" 
     //% shim=OLED_SSD1306::fillTriangle
-    export function fillTriangle(x0: number = 1, y0: number = 1, x1: number = 3, y1: number = 3, x2: number = 1, y2: number = 3): void {
+    export function fillTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void {
         return;
     }
 }
