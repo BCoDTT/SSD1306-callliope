@@ -207,6 +207,5 @@ namespace OLED_SSD1306 {
     export function showProgress(x: number, y: number, width: number, height: number, progress: number): void {
         return;
     }
- 
-    
+   
 }
