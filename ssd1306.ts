@@ -275,14 +275,18 @@ namespace OLED_SSD1306 {
     
     
     /**
-     * @param progress current progress
-     * Show a progress bar with specified percentage of progress
+     * Show a progress bar on position x/y with width w, height h and percentage of progress
+     * @param x x (in pixels)
+     * @param y y (in pixels)
+     * @param width width (in pixels)
+     * @param height height (in pixels)
+     * @param progress progress (in percentage)
      */
     //% blockId=oled_show_progress
-    //% block="show progress of percentage progress %progress|"
+    //% block="show progress bar with x %x|y %y|width %width|height %height|progress %progress|"
     //% async 
     //% shim=OLED_SSD1306::showProgress
-    export function showProgress(progress:number): void {
+    export function showProgress(x: number, y: number, width: number, height: number, progress: number): void {
         return;
     }
 
