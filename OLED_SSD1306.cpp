@@ -65,7 +65,7 @@ namespace OLED_SSD1306 {
 		}
 	}
 
-	
+bvg	
 	//%
 	void clearDisplay(){
 		oled->clearDisplay();
@@ -154,10 +154,8 @@ namespace OLED_SSD1306 {
 		int x2 = x + width;
 		int y2 = y + height;
 		int diff = x2 - x;
-		if(oled->isDisplay) {
-			drawRect(x,y,x2,y2);
-			fillRect(x,y,progress*diff/100,y2);
-		}
+		drawRect(x,y,x2,y2);
+		fillRect(x,y,progress*diff/100,y2);
 	}
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
