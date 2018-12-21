@@ -3,7 +3,7 @@
 Displays a number on the OLED module.
 
 ```sig
-OLED.showNumber(123)
+OLED_SSD1306.showNumber(number)
 ```
 
 The ``init`` block must be placed before this.
@@ -15,8 +15,8 @@ The ``init`` block must be placed before this.
 ## Example
 
 ```blocks
-OLED.init(64, 128)
-OLED.showNumber(100)
+OLED_SSD1306.init(64, 128)
+OLED_SSD1306.showNumber(100)
 ```
 
 # See also
