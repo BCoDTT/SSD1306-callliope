@@ -8,15 +8,15 @@
     },
     "files": [
         "README.md",
-        "oled-ssd1306.ts",
-        "oled-ssd1306.cpp",
+        "oled_ssd1306.ts",
+        "oled_ssd1306.cpp",
         "Adafruit_SSD1306.h",
         "Adafruit_SSD1306.cpp",
         "Adafruit_GFX.h",
         "Adafruit_GFX.cpp",
         "Adafruit_GFX_Config.h",
         "glcdfont.h",
-        "oled-ssd1306-enums.d.ts"
+        "oled_ssd1306_enums.d.ts"
     ],
     "testFiles": [
         "tests.ts"
