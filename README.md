@@ -102,10 +102,16 @@ basic.forever(() => {
 })
 ```
 
-## Supported targets
-
-* for MakeCode (PXT) / calliope mini (and micro:bit) boards.
-
 ## Footnotes
 
 1.  Datasheet https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
+
+## Supported targets
+
+* for PXT/microbit
+(The metadata above is needed for package search.)
+
+
+```package
+pxt-calliope-oled-ssd1306=github:BCoMak3r/pxt-calliope-oled-ssd1306
+```
