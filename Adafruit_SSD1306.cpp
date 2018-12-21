@@ -217,8 +217,15 @@ void Adafruit_SSD1306::shiftDisplay(int16_t dx, int16_t dy) {
 					if (nx < 0 || ny < 0 || nx >= _width || ny >= _height) buffer[cx + (cy>>3) * _rawWidth] &= 0xFF ^ (1<<(cy&7));
 					else {
 						/* swap bits cy % 8 and ny % 8 */
+						/*
+						 * /home/build/prj2/source/pxt-calliope-oled-ssd1306/Adafruit_SSD1306.cpp: In member function 'virtual void Adafruit_SSD1306::shiftDisplay(int16_t, int16_t)':
+						 * /home/build/prj2/source/pxt-calliope-oled-ssd1306/Adafruit_SSD1306.cpp:221:41: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+						 * !(!buffer[nx + (ny>>3)*_rawWidth] & (1<<(ny&7))) ){
+						 *                                   ^
+						 */
 						if ( !!(buffer[cx + (cy>>3)*_rawWidth] & (1<<(cy&7))) !=
-							 !(!buffer[nx + (ny>>3)*_rawWidth] & (1<<(ny&7))) ){
+						     !(!(buffer[nx + (ny>>3)*_rawWidth]) & (1<<(ny&7)) ) 
+						   ) {
 							buffer[cx + (cy>>3)*_rawWidth] ^= (1<<(cy&7));
 							buffer[nx + (ny>>3)* _rawWidth] ^= (1<<(ny&7));
 						}					}
