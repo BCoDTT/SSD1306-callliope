@@ -1,4 +1,4 @@
-# show string on OLED
+# Show string on OLED
 
 Displays a string on the OLED module.
 
