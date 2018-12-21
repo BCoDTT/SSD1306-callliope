@@ -3,7 +3,7 @@
 Sets up the OLED display and prepares it for use by the micro:bit.
 
 ```sig
-OLED.init(64, 128);
+OLED_SSD1306.init(height, width);
 ```
 
 This block must be placed before any of the ``show`` blocks.
@@ -16,8 +16,8 @@ This block must be placed before any of the ``show`` blocks.
 ## Example
 
 ```blocks
-OLED.init(64, 128)
-OLED.showNumber(123)
+OLED_SSD1306.init(64, 128)
+OLED_SSD1306.showNumber(123)
 ```
 
 # See also
