@@ -1,5 +1,5 @@
 {
-    "name": "OLED_SSD1306",
+    "name": "pxt-oled-ssd1306",
     "version": "1.0.0",
     "description": "Handles OLED using controller chip SSD1306 for calliope mini in MakeCode (PXT)",
     "license": "MIT",
@@ -18,6 +18,26 @@
         "glcdfont.h",
         "enums.d.ts",
         "_locales/zh/OLED_SSD1306-strings.json"
+    ],
+    "testFiles": [
+        "tests.ts"
+    ],
+    "public": true
+}
+
+-
+
+{
+    "name": "pxt-kitronik-servo-lite",
+    "version": "1.0.5",
+    "description": "Blocks to simplify using Kitronik Servo:Lite board in PXT",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "servolite.ts"
     ],
     "testFiles": [
         "tests.ts"
