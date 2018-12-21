@@ -1,4 +1,4 @@
-# initialise OLED
+# Initialise OLED
 
 Sets up the OLED display and prepares it for use by the micro:bit.
 
