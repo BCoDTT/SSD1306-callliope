@@ -2,7 +2,7 @@
 #include "Adafruit_SSD1306.h"
 using namespace pxt;
 
-namespace oled-1306 {
+namespace oled_ssd1306 {
 	#define SSD1306_ADDRESS 0x78
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
