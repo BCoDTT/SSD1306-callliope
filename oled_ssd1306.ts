@@ -2,7 +2,7 @@
  * Blocks for driving OLED using SSD1306 controllers
  */
  
-//% weight=91 color=#00A654 icon="\uf1b9" block="OLED:SSD1306"
+//% weight=91 color=#00A654 icon="\uf26c" block="OLED:SSD1306"
 
 namespace oled_ssd1306 {
 
