@@ -2,7 +2,7 @@
 #include "Adafruit_SSD1306.h"
 using namespace pxt;
 
-namespace OLED_SSD1306 {
+namespace oled-1306 {
 	#define SSD1306_ADDRESS 0x78
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
@@ -65,7 +65,7 @@ namespace OLED_SSD1306 {
 		}
 	}
 
-bvg	
+	
 	//%
 	void clearDisplay(){
 		oled->clearDisplay();
@@ -90,6 +90,7 @@ bvg
 		}
 	}
 
+	
 	//%
 	void drawLine(int x0, int y0, int x1, int y1){
 		oled->drawLine(x0, y0, x1, y1, WHITE);
@@ -98,6 +99,7 @@ bvg
 		}
 	}
 
+	
 	//%
 	void fillRect(int x, int y, int w, int h){
 		oled->fillRect(x, y, w, h, WHITE);
@@ -106,6 +108,7 @@ bvg
 		}
 	}
 
+	
 	//%
 	void drawRect(int x, int y, int w, int h){
 		oled->drawRect(x, y, w, h, WHITE);
@@ -114,6 +117,7 @@ bvg
 		}
 	}
 
+	
 	//%
 	void fillRoundRect(int x, int y, int w, int h, int r){
 		oled->fillRoundRect(x, y, w, h, r, WHITE);
@@ -122,6 +126,7 @@ bvg
 		}
 	}
 
+	
 	//%
 	void drawRoundRect(int x, int y, int w, int h, int r){
 		oled->drawRoundRect(x, y, w, h, r, WHITE);
@@ -132,7 +137,7 @@ bvg
 
 	
 	//%
-	void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2){
+	void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
 		oled->drawTriangle(x0, y0, x1, y1, x2, y2, WHITE);
 		if(oled->isDisplay) {
 			oled->display();
@@ -141,7 +146,7 @@ bvg
 
 	
 	//%
-	void fillTriangle(int x0, int y0, int x1, int y1, int x2, int y2){
+	void fillTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
 		oled->fillTriangle(x0, y0, x1, y1, x2, y2, WHITE);
 		if(oled->isDisplay) {
 			oled->display();
@@ -152,12 +157,11 @@ bvg
 	//%
 	void showProgress(int x, int y, int width, int height, int progress) {
 		int widthPb;
-		widthPb = progress * width / 100;		
+		widthPb = progress * width/100;		
 		drawRect(x,y,width,height);
 		fillRect(x,y,widthPb,height);
 	}
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
-	
 }
