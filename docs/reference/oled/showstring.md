@@ -3,7 +3,7 @@
 Displays a string on the OLED module.
 
 ```sig
-OLED.showString("hello, micro:bit!")
+OLED_SSD1306.showString(text)
 ```
 
 The ``init`` block must be placed before this.
@@ -15,8 +15,8 @@ The ``init`` block must be placed before this.
 ## Example
 
 ```blocks
-OLED.init(64, 128)
-OLED.showString("hello, micro:bit!")
+OLED_SSD1306.init(64, 128)
+OLED_SSD1306.showString("Hello from calliope!")
 ```
 
 # See also
