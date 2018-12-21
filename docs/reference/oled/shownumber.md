@@ -1,4 +1,4 @@
-# show number on OLED
+# Show number on OLED
 
 Displays a number on the OLED module.
 
