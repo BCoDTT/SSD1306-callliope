@@ -155,7 +155,7 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void showProgress(int x, int y, int width, int height, int progress) {
+	void showProgressBar(int x, int y, int width, int height, int progress) {
 		int widthPb;
 		widthPb = progress * width/100;		
 		::drawRect(x,y,width,height);
