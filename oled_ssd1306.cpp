@@ -119,12 +119,20 @@ namespace oled_ssd1306 {
 
 	
 	//%
+	void showProgressBarTest(int x, int y) {
+		oled->setTextCursor(x, y);
+	}
+
+	
+	//%
 	void showProgressBar(int x, int y, int width, int height, int progress){
 		int dummy;
 	}
 	
 	
+	// ************************************************************************
 	// THE FUNCTIONS BELOW DO NOT WORK CORRECTLY IN MAKECODE/CALLIOPE
+	// ************************************************************************
 	
 	//%
 	void fillRoundRect(int x, int y, int w, int h, int r){
