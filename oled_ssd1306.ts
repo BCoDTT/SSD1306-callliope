@@ -18,6 +18,7 @@ namespace oled_ssd1306 {
      * ToDo: @param address adddress (in HEX)       # Module's I2C address
      */
     //% blockId=oled_init_terminal block="initialize OLED with height %height|width %width"
+    //% blockGap=6
     //% shim=oled_ssd1306::init_terminal
     export function init(height: number = 64, width: number = 128): void {
         return;
@@ -28,6 +29,7 @@ namespace oled_ssd1306 {
      * Clear OLED display
      */
     //% blockId=oled_clear_screen block="clear OLED display"
+     //% blockGap=6
     //% shim=oled_ssd1306::clearDisplay
     export function clear(): void {
         return;
@@ -39,7 +41,8 @@ namespace oled_ssd1306 {
      * @param x         - absolute x-position (in pixels)
      * @param y         - absolute y-position (in pixels)
      */
-    //% blockId=oled_settextcursor_xy block="set text cursor to position x %x|y %y" 
+    //% blockId=oled_settextcursor_xy block="set text cursor to position x %x|y %y"
+    //% blockGap=6
     //% shim=oled_ssd1306::setTextCursorXY
     export function setTextCursorXY(x: number, y: number): void {
         return;
@@ -51,7 +54,8 @@ namespace oled_ssd1306 {
      * @param row       - row
      * @param column    - column
      */
-    //% blockId=oled_settextcursor_row_col block="set text cursor to row %row|column %column" 
+    //% blockId=oled_settextcursor_row_col block="set text cursor to row %row|column %column"
+    //% blockGap=6
     //% shim=oled_ssd1306::setTextCursorRowColumn
     export function setTextCursorRowColumn(row: number, column: number): void {
         return;
