@@ -119,7 +119,7 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void showProgressBarTest(int x, int y, int w, int h, int p) {
+	void showProgressBarTest(int x, int y, int w, int h) {
 		oled->setTextCursor(x, y);
 	}
 
