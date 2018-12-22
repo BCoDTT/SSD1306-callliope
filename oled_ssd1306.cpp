@@ -119,6 +119,15 @@ namespace oled_ssd1306 {
 
 	
 	//%
+	void showProgressBar(int x, int y, int width, int height, int progress){
+		int dummy;
+		dummy = x;
+	}
+	
+	
+	// THE FUNCTIONS BELOW DO NOT WORK CORRECTLY IN MAKECODE/CALLIOPE
+	
+	//%
 	void fillRoundRect(int x, int y, int w, int h, int r){
 		oled->fillRoundRect(x, y, w, h, r, WHITE);
 		if(oled->isDisplay) {
@@ -153,12 +162,6 @@ namespace oled_ssd1306 {
 		}
 	}
 
-	
-	//%
-	void showProgressBar(int x, int y, int width, int height, int progress) {
-		int dummy;
-		dummy = x;
-	}
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
