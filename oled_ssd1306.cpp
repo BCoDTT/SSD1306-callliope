@@ -156,10 +156,7 @@ namespace oled_ssd1306 {
 	
 	//%
 	void showProgressBar(int x, int y, int width, int height, int progress) {
-		int widthPb;
-		widthPb = progress * width/100;		
-		::drawRect(x,y,width,height);
-		::fillRect(x,y,widthPb,height);
+		return;
 	}
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
