@@ -156,11 +156,10 @@ namespace oled_ssd1306 {
 	
 	//%
 	void showProgressBar(int x, int y, int width, int height, int progress) {
-		return;
+		int dummy;
+		dummy = x;
 	}
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
-
-
