@@ -1,6 +1,6 @@
 Forked from https://github.com/xuefengedu/pxt-oled-ssd1306_CN which bases on https://github.com/Tinkertanker/pxt-oled-ssd1306
 
-# Handles OLED using controller chip SSD1306 on calliope mini (micro:bit) boards in MakeCode (PXT)
+# Handles OLED using controller chip SSD1306 for calliope mini (micro:bit) boards in MakeCode (PXT)
 
 
 1. Forked
