@@ -9,4 +9,3 @@ basic.forever(() => {
     item += 1
     oled_ssd1306.showNumber(item)
 })
-
