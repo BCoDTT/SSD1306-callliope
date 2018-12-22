@@ -172,7 +172,7 @@ namespace oled_ssd1306 {
      */
     //% blockId=oled_show_progress block="show progress bar with x %x|y %y|width %width|height %height|progress %progress"
     //% shim=oled_ssd1306::showProgress
-    export function showProgress(x: number, y: number, width: number, height: number, progress: number): void {
+    export function showProgressBar(x: number, y: number, width: number, height: number, progress: number): void {
         return;
     }
    
