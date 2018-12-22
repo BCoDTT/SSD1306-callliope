@@ -181,13 +181,8 @@ namespace oled_ssd1306 {
      */
     //% blockId=oled_show_progress_bar_test block="show progress bar with x %x|y %y|w %w|h %h|p %p"
     //% shim=oled_ssd1306::showProgressBarTest
-    var arr_params:number[] = new Array(5);
-    arr_params[0] = x;
-    arr_params[1] = y;
-    arr_params[2] = w;
-    arr_params[3] = h;
-    arr_params[4] = p;
-    export function showProgressBarTest(arr_params:number[]): void {
+    let arrayOfIntParams: number[] = [x: number, y: number, w: number, h: number, p: number];
+    export function showProgressBarTest(arrayOfIntParams: number[]): void {
         return;
     }
  
