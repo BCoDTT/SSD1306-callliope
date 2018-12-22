@@ -121,7 +121,6 @@ namespace oled_ssd1306 {
 	//%
 	void showProgressBar(int x, int y, int width, int height, int progress){
 		int dummy;
-		dummy = x;
 	}
 	
 	
