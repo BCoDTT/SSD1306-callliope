@@ -29,7 +29,7 @@ namespace oled_ssd1306 {
      * Clear OLED display
      */
     //% blockId=oled_clear_screen block="clear OLED display"
-     //% blockGap=6
+    //% blockGap=6
     //% shim=oled_ssd1306::clearDisplay
     export function clear(): void {
         return;
