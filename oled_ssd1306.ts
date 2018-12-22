@@ -180,7 +180,7 @@ namespace oled_ssd1306 {
      * @param h         - height of progressbar (in pixels)
      * @param p         - degree of done
      */
-    //% blockId=oled_show_progress_bar_test block="show progress bar with x %x|y %y|w %w|h %h"
+    //% blockId=oled_show_progress_bar_test block="show progress bar with x %x|y %y|w %w|h %h|p %p"
     //% shim=oled_ssd1306::showProgressBarTest
     export function showProgressBarTest(x: number, y: number, w: number, h: number, p: number): void {
         return;
