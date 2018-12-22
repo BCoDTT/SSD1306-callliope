@@ -13,8 +13,8 @@ namespace oled_ssd1306 {
 
     /**
      * Initializes the I2C OLED display driven by SSD1306 controller
-     * @param height        - height of display (in pixels)
-     * @param width         - width of display (in pixels)
+     * @param height        - height of display (in pixels); eg: 64
+     * @param width         - width of display (in pixels); eg: 128
      * ToDo: @param address adddress (in HEX)       # Module's I2C address
      */
     //% blockId=oled_init_terminal block="initialize OLED with height %height|width %width"
