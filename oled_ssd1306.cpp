@@ -135,9 +135,10 @@ namespace oled_ssd1306 {
 	
 	//%
 	void showProgressBarTest(int progress) {
-		int x = arrayOfIntParams[0];
-		int y = arrayOfIntParams[1];		
-		oled->setTextCursor(x, y);
+		int progressBarActWidth;
+		progressBarActWidth = progress * progressBarWidth/100;		
+		drawRect(progressBarX,progressBarY,progressBarWidth,progressBarHeight);
+		fillRect(progressBarX,progressBarY,progressBarActWidth,progressBarHeight);
 	}
 
 	
