@@ -10,7 +10,13 @@ namespace oled_ssd1306 {
 	
 	MicroBitI2C i2c(I2C_SDA0, I2C_SCL0);
 	Adafruit_SSD1306_I2C *oled;
+	
+	int progressBarX = 0;
+	int progressBarY = 0;
+	int progressBarWidth = 0;
+	int progressBarHeight = 0;
 
+	
 	void init(int height, int width){
 		if (oled != NULL) delete oled;
 		oled = new Adafruit_SSD1306_I2C(i2c, SSD1306_ADDRESS, height, width);
@@ -117,9 +123,18 @@ namespace oled_ssd1306 {
 		}
 	}
 
+
+	//%
+	void initProgressBarTest(int x, int y, int width, int height) {
+		progressBarX = xStart;
+		progressBarY = yStart;
+		progressBarWidth = width;
+		progressBarHeight = height;
+	}
+
 	
 	//%
-	void showProgressBarTest(int32 arrayOfIntParams[]) {
+	void showProgressBarTest(int progress) {
 		int x = arrayOfIntParams[0];
 		int y = arrayOfIntParams[1];		
 		oled->setTextCursor(x, y);
