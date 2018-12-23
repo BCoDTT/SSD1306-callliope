@@ -7,16 +7,28 @@ namespace oled_ssd1306 {
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
 	#undef printf
-	
+
+	// ################################## (Namespace) global variables  ##################################
+	//
 	MicroBitI2C i2c(I2C_SDA0, I2C_SCL0);
 	Adafruit_SSD1306_I2C *oled;
+
 	
+	// Variables for progress bar
 	int progressBarX = 0;
 	int progressBarY = 0;
 	int progressBarWidth = 0;
 	int progressBarHeight = 0;
+	bool progressBarBoxDrawn = false;
 
+	// Variables for rectangle
+	bool rectangleFilled = false;
+	int rectangleEdgeRadius = 0;
+	int rectangleLineColor = WHITE;
 	
+	
+	// ################################## Functions ##################################
+	//
 	void init(int height, int width){
 		if (oled != NULL) delete oled;
 		oled = new Adafruit_SSD1306_I2C(i2c, SSD1306_ADDRESS, height, width);
@@ -123,9 +135,36 @@ namespace oled_ssd1306 {
 		}
 	}
 
+	
+	//%
+	void initRectangle(bool filled, int edgeRadius, int lineColor) {
+		rectangleFilled = filled;
+		rectangleEdgeRadius = edgeRadius;
+		rectangleLineColor = lineColor;
+	}
+
 
 	//%
-	void initProgressBarTest(int x, int y, int width, int height) {
+	void drawRectangle(int x, int y, int width, int height) {
+		if (rectangleEdgeRadius == 0) {
+			if (!rectangleFilled) {
+					oled->drawRect(x, y, width, height, rectangleLineColor);
+			} else {
+					oled->fillRect(x, y, width, height, rectangleLineColor);
+			}
+		} else {
+			if (!rectangleFilled) {
+					oled->fillRoundRect(x, y, width, height, rectangleEdgeRadius, rectangleLineColor);
+			} else {
+					oled->fillRoundRect(x, y, width, height, rectangleEdgeRadius, rectangleLineColor);
+			}
+		}
+				
+	}
+	
+	
+	//%
+	void initProgressBar(int x, int y, int width, int height) {
 		progressBarX = x;
 		progressBarY = y;
 		progressBarWidth = width;
@@ -134,24 +173,25 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void showProgressBarTest(int progress) {
-		int progressBarActWidth;
-		progressBarActWidth = progress * progressBarWidth/100;		
-		drawRect(progressBarX,progressBarY,progressBarWidth,progressBarHeight);
-		fillRect(progressBarX,progressBarY,progressBarActWidth,progressBarHeight);
+	void showProgressBar(int progress) {
+		int progressBarActWidth = progress * (progressBarWidth-4)/100;		
+		int progressBarFillX = progressBarX + 2;
+		int progressBarFillY = progressBarY - 2;
+		int progressBarFillHeight = progressBarHeight - 2;
+		
+		if (!progressBarBoxDrawn) { 
+			drawRect(progressBarX,progressBarY,progressBarWidth,progressBarHeight);
+			progressBarBoxDrawn = true;
+		}
+		
+		fillRect(progressBarFillX,progressBarFillY,progressBarActWidth,progressBarFillHeight);
 	}
 
-	
-	//%
-	void showProgressBar(int x, int y, int width, int height, int progress){
-		int dummy;
-		dummy = 0;
-	}
-	
 	
 	// ************************************************************************
 	// THE FUNCTIONS BELOW DO NOT WORK CORRECTLY IN MAKECODE/CALLIOPE
 	// ************************************************************************
+	
 	
 	//%
 	void fillRoundRect(int x, int y, int w, int h, int r){

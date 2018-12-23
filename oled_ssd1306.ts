@@ -172,26 +172,57 @@ namespace oled_ssd1306 {
  
  
      /**
+     * Init rectangle draw mode (filled, radius, color)
+     * @param filled    - to fill or not to fill the rectangle (boolean)
+     * @param radius    - radius of the rectangle's edges
+     * @param color     - line color
+     */
+    //% blockId=oled_init_rectangle block="init rectangle filled %f|radius %r|color %c"
+    //% blockGap=6
+    //% shim=oled_ssd1306::initRectangle
+    export function initRectangle(f: boolean = false, r: number = 0, color: number = 1): void {
+        return;
+    }
+ 
+
+     /**
+     * Draw a rectangle using the draw mode set by initRectangle at position x/y with width w, height h. initRectangle must be called prior to this call!
+     * @param x     - x-position of left lower corner (in pixels)
+     * @param y     - y-position of left lower corner (in pixels)
+     * @param w     - width of rectangle (in pixels)
+     * @param h     - height of rectangle (in pixels)
+     */
+    //% blockId=oled_drawRectangle block="draw rectangle with x %x|y %y|w %w|h %h"
+    //% blockGap=6
+    //% shim=oled_ssd1306::drawRectangle
+    export function drawRectangle(x: number, y: number, w: number, h: number): void {
+        return;
+    }
+	
+ 
+     /**
      * Init a progress bar on position x/y with width w, height h
      * @param x         - x-position of left lower corner (in pixels)
      * @param y         - y-position of left lower corner (in pixels)
      * @param width     - width of progress bar (in pixels)
      * @param height    - height of progressbar (in pixels)
      */
-    //% blockId=oled_init_progress_bar_test block="init progress bar with x %x|y %y|width %w|height %h"
-    //% shim=oled_ssd1306::initProgressBarTest
-    export function initProgressBarTest(x: number, y: number, width: number, height: number): void {
+    //% blockId=oled_init_progress_bar block="init progress bar with x %x|y %y|width %w|height %h"
+    //% blockGap=6
+    //% shim=oled_ssd1306::initProgressBar
+    export function initProgressBar(x: number, y: number, width: number, height: number): void {
         return;
     }
  
 
-      /**
+     /**
      * Show a progress bar with percentage of progress. initProgressBar must be called prior to this call!
      * @param percentage   - degree of done
      */
-    //% blockId=oled_show_progress_bar_test block="show progress bar with percentage %percentage"
-    //% shim=oled_ssd1306::showProgressBarTest
-    export function showProgressBarTest(percentage: number): void {
+    //% blockId=oled_show_progress_bar block="show progress bar with percentage %percentage"
+    //% blockGap=6
+    //% shim=oled_ssd1306::showProgressBar
+    export function showProgressBar(percentage: number): void {
         return;
     }
    
