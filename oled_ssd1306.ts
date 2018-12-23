@@ -60,8 +60,20 @@ namespace oled_ssd1306 {
     export function setTextCursorRowColumn(row: number, column: number): void {
         return;
     }
-   
-    
+	
+
+     /**
+     * Sets the text size (experimeltal)
+     * @param size	- text size; eg: 1
+     */
+    //% blockId=oled_settextsize block="set text size to size %size"
+    //% blockGap=6
+    //% shim=oled_ssd1306::setTextSize
+    export function setTextSize(size: number): void {
+        return;
+    }
+
+	
     /**
      * Prints a string on the OLED display at the current text cursor position
      * @param text - text to display on OLED display
