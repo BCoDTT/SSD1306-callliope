@@ -178,7 +178,7 @@ namespace oled_ssd1306 {
      * @param width     - width of progress bar (in pixels)
      * @param height    - height of progressbar (in pixels)
      */
-    //% blockId=oled_show_progress_bar_test block="init progress bar with x %x|y %y|width %w|height %h"
+    //% blockId=oled_init_progress_bar_test block="init progress bar with x %x|y %y|width %w|height %h"
     //% shim=oled_ssd1306::initProgressBarTest
     export function initProgressBarTest(x: number, y: number, width: number, height: number): void {
         return;
