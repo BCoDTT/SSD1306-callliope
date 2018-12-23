@@ -60,6 +60,12 @@ namespace oled_ssd1306 {
 		oled->setTextCursor(column, row);
 	}
 	
+
+	//%
+	void setTextSize(int size) {
+		oled->setTextSize(size);
+	}
+	
 	
 	//%
 	void showString(StringData *text) {
