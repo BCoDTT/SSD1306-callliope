@@ -173,9 +173,9 @@ namespace oled_ssd1306 {
  
      /**
      * Init rectangle draw mode (filled, radius, color)
-     * @param filled    - to fill or not to fill the rectangle (boolean)
-     * @param radius    - radius of the rectangle's edges
-     * @param color     - line color
+     * @param filled    - to fill or not to fill the rectangle (boolean); eg: false
+     * @param radius    - radius of the rectangle's edges; eg: 0
+     * @param color     - line color; eg: 1
      */
     //% blockId=oled_init_rectangle block="init rectangle filled %f|radius %r|color %c"
     //% blockGap=6
@@ -205,12 +205,12 @@ namespace oled_ssd1306 {
      * @param x         - x-position of left lower corner (in pixels)
      * @param y         - y-position of left lower corner (in pixels)
      * @param width     - width of progress bar (in pixels)
-     * @param height    - height of progressbar (in pixels)
+     * @param height    - height of progressbar (in pixels; eg: 7
      */
     //% blockId=oled_init_progress_bar block="init progress bar with x %x|y %y|width %w|height %h"
     //% blockGap=6
     //% shim=oled_ssd1306::initProgressBar
-    export function initProgressBar(x: number, y: number, width: number, height: number): void {
+    export function initProgressBar(x: number, y: number, width: number, height: number = 7): void {
         return;
     }
  
