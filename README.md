@@ -4,7 +4,7 @@ Forked from https://github.com/xuefengedu/pxt-oled-ssd1306_CN which bases on htt
 
 
 1. Forked
-2. Changed name space to OLED / OLED_SSD1306
+2. Changed name space to oled / oled:ssd1306
 3. ! Warning: under development !
 4. Added more functions:
 ```
