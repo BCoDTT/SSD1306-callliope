@@ -284,4 +284,3 @@ void Adafruit_SSD1306::splash(void)
 	textcolor = WHITE;
 	textbgcolor = BLACK;
 }
-
