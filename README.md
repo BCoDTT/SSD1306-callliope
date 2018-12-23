@@ -4,12 +4,12 @@ Forked from https://github.com/xuefengedu/pxt-oled-ssd1306_CN which bases on htt
 
 
 1. Forked
-2. Changed name space to oled / oled:ssd1306
+2. Changed name space to oled / oled_ssd1306 and menu entry name to oled:ssd1306
 3. ! Warning: under development !
 4. Added more functions:
 ```
-    "OLED_SSD1306.setTextCursorToXY|block": " x %x|y %y",
-    "OLED_SSD1306.setTextCursorToRowCol|block": " row %row|column %column"
+    "oled_ssd1306.setTextCursorToXY|block": " x %x|y %y",
+    "oled_ssd1306.setTextCursorToRowCol|block": " row %row|column %column"
 ```
  
 ## Usage
@@ -39,7 +39,7 @@ Initializes the OLED display.
 Sets up the OLED display and prepares it for use by the micro:bit.
 
 ```sig
-OLED_SSD1306.init(64, 128);
+oled_ssd1306.init(64, 128);
 ```
 
 This block must be placed before any of the ``show`` blocks.
@@ -49,14 +49,14 @@ This block must be placed before any of the ``show`` blocks.
 Sets the text cursor to the coordinates x/y for printing  a string on the OLED module.
 
 ```sig
-OLED_SSD1306.setTextCursorToXY(x, y)
+oled_ssd1306.setTextCursorToXY(x, y)
 ```
 
 ### Set text cursor to row/column
 Sets the text cursor to the row/column for printing  a string on the OLED module.
 
 ```sig
-OLED_SSD1306.setTextCursorToRowColumn(row, column)
+oled_ssd1306.setTextCursorToRowColumn(row, column)
 ```
 
 
@@ -64,7 +64,7 @@ OLED_SSD1306.setTextCursorToRowColumn(row, column)
 Displays a string on the OLED module.
 
 ```sig
-OLED_SSD1306.showString("hello, micro:bit!")
+oled_ssd1306.showString("hello, micro:bit!")
 ```
 
 The ``init`` block must be placed before this.
@@ -74,7 +74,7 @@ The ``init`` block must be placed before this.
 Displays a number on the OLED module.
 
 ```sig
-OLED_SSD1306.showNumber(123)
+oled_ssd1306.showNumber(123)
 ```
 
 The ``init`` block must be placed before this.
@@ -84,7 +84,7 @@ The ``init`` block must be placed before this.
 Clears the display.
 
 ```sig
-OLED_SSD1306.clear()
+oled_ssd1306.clear()
 ```
 
 The ``init`` block must be placed before this.
@@ -93,12 +93,12 @@ The ``init`` block must be placed before this.
 The following code is a simple counter that displays an increasing number every second.
 
 ```blocks
-OLED_SSD1306.init(64, 128)
+oled_ssd1306.init(64, 128)
 let item = 0
 basic.forever(() => {
     basic.pause(1000)
     item += 1
-    OLED_SSD1306.showNumber(item)
+    oled_ssd1306.showNumber(item)
 })
 ```
 
