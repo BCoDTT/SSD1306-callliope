@@ -126,8 +126,8 @@ namespace oled_ssd1306 {
 
 	//%
 	void initProgressBarTest(int x, int y, int width, int height) {
-		progressBarX = xStart;
-		progressBarY = yStart;
+		progressBarX = x;
+		progressBarY = y;
 		progressBarWidth = width;
 		progressBarHeight = height;
 	}
@@ -145,6 +145,7 @@ namespace oled_ssd1306 {
 	//%
 	void showProgressBar(int x, int y, int width, int height, int progress){
 		int dummy;
+		dummy = 0;
 	}
 	
 	
