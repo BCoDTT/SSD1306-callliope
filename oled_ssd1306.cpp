@@ -185,7 +185,7 @@ namespace oled_ssd1306 {
 	void showProgressBar(int progress) {
 		int progressBarActWidth = progress * (progressBarWidth-4)/100;		
 		int progressBarFillX = progressBarX + 2;
-		int progressBarFillY = progressBarY;
+		int progressBarFillY = progressBarY + 2;
 		int progressBarFillHeight = progressBarHeight - 4;
 		
 		if (!progressBarBoxDrawn) { 
