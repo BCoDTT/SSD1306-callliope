@@ -172,21 +172,30 @@ namespace oled_ssd1306 {
  
  
      /**
-     * Show a progress bar on position x/y with width w, height h and percentage of progress
+     * Init a progress bar on position x/y with width w, height h
      * @param x         - x-position of left lower corner (in pixels)
      * @param y         - y-position of left lower corner (in pixels)
-     * @param w         - width of progress bar (in pixels)
-     * @param h         - height of progressbar (in pixels)
-     * @param p         - degree of done
+     * @param width     - width of progress bar (in pixels)
+     * @param height    - height of progressbar (in pixels)
      */
-    //% blockId=oled_show_progress_bar_test block="show progress bar with x %x|y %y|w %w|h %h|p %p"
-    //% shim=oled_ssd1306::showProgressBarTest
-    let arrayOfIntParams: number[] = [x: number, y: number, w: number, h: number, p: number];
-    export function showProgressBarTest(arrayOfIntParams: number[]): void {
+    //% blockId=oled_show_progress_bar_test block="init progress bar with x %x|y %y|width %w|height %h"
+    //% shim=oled_ssd1306::initProgressBarTest
+    export function initProgressBarTest(x: number, y: number, width: number, height: number): void {
         return;
     }
  
-    
+
+      /**
+     * Show a progress bar with percentage of progress. initProgressBar must be called prior to this call!
+     * @param percentage   - degree of done
+     */
+    //% blockId=oled_show_progress_bar_test block="show progress bar with percentage %percentage"
+    //% shim=oled_ssd1306::showProgressBarTest
+    export function showProgressBarTest(percentage: number): void {
+        return;
+    }
+ 
+ 
     /**
      * Show a progress bar on position x/y with width w, height h and percentage of progress
      * @param x         - x-position of left lower corner (in pixels)
