@@ -32,7 +32,7 @@ namespace oled_ssd1306 {
 	void init(int height, int width){
 		if (oled != NULL) delete oled;
 		oled = new Adafruit_SSD1306_I2C(i2c, SSD1306_ADDRESS, height, width);
-		oled->splash();
+		//oled->splash();
 		oled->display();
 	}
 	
