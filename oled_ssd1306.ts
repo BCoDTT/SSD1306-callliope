@@ -63,7 +63,7 @@ namespace oled_ssd1306 {
 	
 
      /**
-     * Sets the text size (experimeltal)
+     * Sets the text size (experimental)
      * @param size	- text size; eg: 1
      */
     //% blockId=oled_settextsize block="set text size to size %size"
