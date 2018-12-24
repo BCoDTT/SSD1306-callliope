@@ -159,10 +159,10 @@ namespace oled_ssd1306 {
      * @param radius    - radius of the rectangle's edges; eg: 0
      * @param color     - line color; eg: 1
      */
-    //% blockId=oled_init_rectangle block="init rectangle filled %f|radius %r|color %c"
+    //% blockId=oled_init_rectangle block="init rectangle filled %f|radius %r|color %color"
     //% blockGap=6
     //% shim=oled_ssd1306::initRectangle
-    export function initRectangle(f: boolean = false, r: number = 0, color: number = 1): void {
+    export function initRectangle(f: boolean = false, r: number = 0, color: Colors = White): void {
         return;
     }
  
