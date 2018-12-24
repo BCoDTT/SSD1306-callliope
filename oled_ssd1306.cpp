@@ -197,47 +197,6 @@ namespace oled_ssd1306 {
 	}
 
 	
-	// ************************************************************************
-	// THE FUNCTIONS BELOW DO NOT WORK CORRECTLY IN MAKECODE/CALLIOPE
-	// ************************************************************************
-	
-	
-	//%
-	void fillRoundRect(int x, int y, int w, int h, int r){
-		oled->fillRoundRect(x, y, w, h, r, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void drawRoundRect(int x, int y, int w, int h, int r){
-		oled->drawRoundRect(x, y, w, h, r, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
-		oled->drawTriangle(x0, y0, x1, y1, x2, y2, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void fillTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
-		oled->fillTriangle(x0, y0, x1, y1, x2, y2, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
