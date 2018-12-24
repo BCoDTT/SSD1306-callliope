@@ -153,16 +153,46 @@ namespace oled_ssd1306 {
     }
 
     
+    /**
+     * Draws a rectangle on the OLED display at absolute coordinates x/y, using width w and height h
+     * @param x     - x-position of left lower corner (in pixels)
+     * @param y     - y-position of left lower corner (in pixels)
+     * @param w     - width of rectangle (in pixels)
+     * @param h     - height of rectangle (in pixels)
+     */
+    //% blockId=oled_drawRect block="draw rect with x %x|y %y|w %w|h %h"
+    //% blockGap=6
+    //% shim=oled_ssd1306::drawRect
+    export function drawRect(x: number, y: number, w: number, h: number): void {
+        return;
+    }
+
+    
+    /**
+     * Draws a filled rectangle on the OLED display at absolute coordinates x/y, using  width w and height h
+     * @param x     - x-position of left lower corner (in pixels)
+     * @param y     - y-position of left lower corner (in pixels)
+     * @param w     - width of rectangle (in pixels)
+     * @param h     - height of rectangle (in pixels)
+     */
+    //% blockId=oled_fillRect block="fill rect with x %x|y %y|w %w|h %h"
+    //% blockGap=6
+    //% shim=oled_ssd1306::fillRect
+    export function fillRect(x: number, y: number, w: number, h: number): void {
+        return;
+    }
+ 
+ 
      /**
      * Init rectangle draw mode (filled, radius, color)
      * @param filled    - to fill or not to fill the rectangle (boolean); eg: false
      * @param radius    - radius of the rectangle's edges; eg: 0
      * @param color     - line color; eg: 1
      */
-    //% blockId=oled_init_rectangle block="init rectangle filled %f|radius %r|color %color"
+    //% blockId=oled_init_rectangle block="init rectangle filled %f|radius %r|color %c"
     //% blockGap=6
     //% shim=oled_ssd1306::initRectangle
-    export function initRectangle(f: boolean = false, r: number = 0, color: Colors = White): void {
+    export function initRectangle(f: boolean = false, r: number = 0, color: number = 1): void {
         return;
     }
  
@@ -210,4 +240,3 @@ namespace oled_ssd1306 {
    
     
 }
-
