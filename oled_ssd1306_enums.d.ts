@@ -8,3 +8,4 @@ declare namespace oled_ssd1306 {
 		Black = 0
 	}
 }
+
