@@ -55,7 +55,7 @@ namespace oled_ssd1306 {
 		oled = new Adafruit_SSD1306_I2C(i2c, i2c_address, height, width);
 		oled->clearDisplay();
 		oled->display();
-		oled->set_textCursor(0, 0);
+		oled->setTextCursor(0, 0);
 	}
 
 
