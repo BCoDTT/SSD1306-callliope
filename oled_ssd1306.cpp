@@ -208,11 +208,16 @@ namespace oled_ssd1306 {
 		int progressBarFillHeight = progressBarHeight - 4;
 		
 		if (!progressBarBoxDrawn) { 
-			drawRect(progressBarX,progressBarY,progressBarWidth,progressBarHeight);
+			oled->drawRect(progressBarX, progressBarY, progressBarWidth, progressBarHeight, lineColor);
 			progressBarBoxDrawn = true;
 		}
 		
-		fillRect(progressBarFillX,progressBarFillY,progressBarActWidth,progressBarFillHeight);
+		oled->fillRect(progressBarFillX, progressBarFillY, progressBarActWidth, progressBarFillHeight, lineColor);
+
+		if(oled->isDisplay) {
+			oled->display();
+		}						
+
 	}
 
 	
