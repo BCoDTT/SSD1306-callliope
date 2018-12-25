@@ -11,19 +11,23 @@ namespace oled_ssd1306 {
    ***********************************************************************************************
    */
 
+   
+   	// ### Initialisation ####################################################################################################
+
+	
     /**
      * Initializes the I2C OLED display driven by SSD1306 controller
      * @param height        - height of display (in pixels); eg: 64
      * @param width         - width of display (in pixels); eg: 128
-     * ToDo: @param address adddress (in HEX)       # Module's I2C address
+     * @param i2c_address	- module's I2C address (in HEX); eg: 0x78
      */
-    //% blockId=oled_init_terminal block="initialize OLED with height %height|width %width"
+    //% blockId=oled_init_display block="initialize OLED with height %height|width %width|address %i2c_address"
     //% blockGap=6
-    //% shim=oled_ssd1306::init_terminal
-    export function init(height: number = 64, width: number = 128): void {
+    //% shim=oled_ssd1306::initDisplay
+    export function initDisplay(height: number = 64, width: number = 128, i2c_address = 0x78): void {
         return;
     }
-
+	
     
     /**
      * Clear OLED display
@@ -31,11 +35,39 @@ namespace oled_ssd1306 {
     //% blockId=oled_clear_screen block="clear OLED display"
     //% blockGap=6
     //% shim=oled_ssd1306::clearDisplay
-    export function clear(): void {
+    export function clearDisplay(): void {
         return;
     }
 
-    
+	
+	/**
+     * Switch OLED display on/off
+     * @param on - switch display on or off (boolean); eg: true
+     */
+    //% blockId=oled_switch_display_to_on block="switch OLED display on %on"
+    //% blockGap=8
+    //% shim=oled_ssd1306::switchDisplayToOn
+    export function switchDisplayToOn(on: boolean = true): void {
+        return;
+    }
+	
+ 
+	// ### Printing of text / numbers ######################################################################################
+
+
+	/**
+     * Set text foreground and background color (currently Black or White)
+     * @param fgColor    - line color; eg: 1
+     * @param bgColor    - line color; eg: 0
+     */
+    //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor|bgColor %bgColor"
+    //% blockGap=6
+    //% shim=oled_ssd1306::setTextColor
+    export function setTextColor(fgColor: Color = Color.White, bgColor: Color = Color.Black): void {
+        return;
+    }
+	
+	
     /**
      * Sets the text cursor to absolute position x/y
      * @param x         - absolute x-position (in pixels)
@@ -63,10 +95,10 @@ namespace oled_ssd1306 {
 	
 
      /**
-     * Sets the text size (experimental)
+     * Sets the text size
      * @param size	- text size; eg: 1
      */
-    //% blockId=oled_settextsize block="set text size to size %size"
+    //% blockId=oled_set_text_size block="set text size to size %size"
     //% blockGap=6
     //% shim=oled_ssd1306::setTextSize
     export function setTextSize(size: number): void {
@@ -78,10 +110,10 @@ namespace oled_ssd1306 {
      * Prints a string on the OLED display at the current text cursor position
      * @param text - text to display on OLED display
      */
-    //% blockId=oled_print_string block="show|string %text"
+    //% blockId=oled_print_string block="print|string %text"
     //% blockGap=6
-    //% shim=oled_ssd1306::showString
-    export function showString(text: string): void {
+    //% shim=oled_ssd1306::printString
+    export function printString(text: string): void {
         return;
     }
 
@@ -90,139 +122,111 @@ namespace oled_ssd1306 {
      * Prints a number on the OLED display at the current text cursor position
      * @param number - number to display on OLED display
      */
-    //% block="show|number %number" blockId=oled_print_number
-    //% blockGap=6
-    //% shim=oled_ssd1306::showNumber
-    export function showNumber(number: number): void {
+    //% blockId=oled_print_number block="print|number %number"
+    //% blockGap=8
+    //% shim=oled_ssd1306::printNumber
+    export function printNumber(number: number): void {
         return;
     }
 
+	
+	// ### Drawing of lines, circles, rectangles etc. ######################################################################
 
-    /**
-     * Switch OLED display on/off
-     * @param on on     - switch display on or off
+	
+	/**
+     * Set line color for drawing (currently Black or White)
+     * @param color    - line color; eg: 1
      */
-    //% blockId=oled_onOffDisplay block="switch OLED display|on %on"
+    //% blockId=oled_set_draw_color block="Set line color to %color"
     //% blockGap=6
-    //% shim=oled_ssd1306::onOffDisplay
-    export function onOffDisplay(on: boolean = true): void {
+    //% shim=oled_ssd1306::setLineColor
+    export function setLineColor(color: Color = Color.White): void {
         return;
     }
 
-    
+	
     /**
-     * Draws a circle on the OLED display at absolute coordinates x/y with radius r
-     * @param x     - x-position (in pixels)
-     * @param y     - y-position (in pixels)
-     * @param r     - radius of circle (in pixels)
-     */
-    //% blockId=oled_drawCircle block="draw circle with x %x|y %y|r %r"
-    //% blockGap=6
-    //% shim=oled_ssd1306::drawCircle
-    export function drawCircle(x: number, y: number, r: number): void {
-        return;
-    }
-
-    
-    /**
-     * Draws a filled circle on the OLED display at absolute coordinates x/y with radius r
-     * @param x     - x-position (in pixels)
-     * @param y     - y-position (in pixels)
-     * @param r     - radius of circle (in pixels)
-     */
-    //% blockId=oled_fillCircle block="fill circle with x %x|y %y|r %r"
-     //% blockGap=6
-    //% shim=oled_ssd1306::fillCircle
-    export function fillCircle(x: number, y: number, r: number): void {
-        return;
-    }
-
-    
-    /**
-     * Draws a line on the OLED display from absolute coordinates x0/y0 to x1/y1
+     * Draws a line on the OLED display from absolute coordinates x0/y0 to x1/y1 and draw color set.
      * @param x0    - x-position of start coordinate (in pixels)
      * @param y0    - y-position of start coordinate (in pixels)
-     * @param x1    - x-position of end coordinate (in pixels)
-     * @param y1    - y-position of end coordinate (in pixels)
+     * @param dx    - x-component of vector (in pixels)
+     * @param dy    - y-component of vector of end coordinate (in pixels)
      */
-    //% blockId=oled_drawLine block="draw line with x0 %x0|y0 %y0|x1 %x1|y1 %y1"
+    //% blockId=oled_drawLine block="draw line with x0 %x0|y0 %y0|dx %dx|dy %dy"
     //% blockGap=6
     //% shim=oled_ssd1306::drawLine
-    export function drawLine(x0: number, y0: number, x1: number, y1: number): void {
+    export function drawLine(x0: number, y0: number, dx: number, dy: number): void {
         return;
     }
 
-    
-    /**
-     * Draws a rectangle on the OLED display at absolute coordinates x/y, using width w and height h
-     * @param x     - x-position of left lower corner (in pixels)
-     * @param y     - y-position of left lower corner (in pixels)
-     * @param w     - width of rectangle (in pixels)
-     * @param h     - height of rectangle (in pixels)
+
+	/**
+     * Init circle draw mode (filled or not, radius)
+     * @param filled    - to fill or not to fill the circle (boolean); eg: false
+     * @param radius    - radius of the rectangle's edges; eg: 5
      */
-    //% blockId=oled_drawRect block="draw rect with x %x|y %y|w %w|h %h"
+    //% blockId=oled_init_circle block="init circle filled %filled|radius %radius"
     //% blockGap=6
-    //% shim=oled_ssd1306::drawRect
-    export function drawRect(x: number, y: number, w: number, h: number): void {
+    //% shim=oled_ssd1306::initCircle
+    export function initCircle(filled: boolean = false, radius: number = 5): void {
         return;
     }
 
-    
+
     /**
-     * Draws a filled rectangle on the OLED display at absolute coordinates x/y, using  width w and height h
-     * @param x     - x-position of left lower corner (in pixels)
-     * @param y     - y-position of left lower corner (in pixels)
-     * @param w     - width of rectangle (in pixels)
-     * @param h     - height of rectangle (in pixels)
+     * Draws a circle on the OLED display at absolute coordinates x/y with mode set with initCircle.
+	 * The function initCircle has to be called first!
+     * @param x0    - x-position (in pixels); eg: 63
+     * @param y0    - y-position (in pixels); eg: 31
      */
-    //% blockId=oled_fillRect block="fill rect with x %x|y %y|w %w|h %h"
-    //% blockGap=6
-    //% shim=oled_ssd1306::fillRect
-    export function fillRect(x: number, y: number, w: number, h: number): void {
+    //% blockId=oled_draw_circle block="draw circle at x0 %x0|y0 %y0"
+     //% blockGap=6
+    //% shim=oled_ssd1306::drawCircle
+    export function drawCircle(x0: number = 63, y0: number = 31): void {
         return;
     }
- 
- 
-     /**
-     * Init rectangle draw mode (filled, radius, color)
-     * @param filled    - to fill or not to fill the rectangle (boolean); eg: false
-     * @param radius    - radius of the rectangle's edges; eg: 0
-     * @param color     - line color; eg: 1
+	
+	
+	/**
+     * Init rectangle draw mode (filled or not, radius, color)
+     * @param filled     - to fill or not to fill the rectangle (boolean); eg: false
+     * @param edgeRadius - radius of the rectangle's edges; eg: 0
      */
-    //% blockId=oled_init_rectangle block="init rectangle filled %f|radius %r|color %c"
+    //% blockId=oled_init_rectangle block="init rectangle filled %filled|edgeRadius %edgeRadius"
     //% blockGap=6
     //% shim=oled_ssd1306::initRectangle
-    export function initRectangle(f: boolean = false, r: number = 0, color: number = 1): void {
+    export function initRectangle(filled: boolean = false, edgeRadius: number = 0): void {
         return;
     }
- 
-
+	
+    
      /**
-     * Draw a rectangle using the draw mode set by initRectangle at position x/y with width w, height h. initRectangle must be called prior to this call!
-     * @param x     - x-position of left lower corner (in pixels)
-     * @param y     - y-position of left lower corner (in pixels)
-     * @param w     - width of rectangle (in pixels)
-     * @param h     - height of rectangle (in pixels)
+     * Draw a rectangle using the draw mode set by initRectangle at position x0/0y with width w, height h.
+	 * initRectangle must be called prior to this call!
+     * @param x0     - x-position of left lower corner (in pixels)
+     * @param y0     - y-position of left lower corner (in pixels)
+     * @param width  - width of rectangle (in pixels)
+     * @param height - height of rectangle (in pixels)
      */
-    //% blockId=oled_drawRectangle block="draw rectangle with x %x|y %y|w %w|h %h"
+    //% blockId=oled_drawRectangle block="draw rectangle with x0 %x0|y0 %y0|width %width|height %height"
     //% blockGap=6
     //% shim=oled_ssd1306::drawRectangle
-    export function drawRectangle(x: number, y: number, w: number, h: number): void {
+    export function drawRectangle(x0: number, y0: number, width: number, height: number): void {
         return;
     }
 	
  
      /**
      * Init a progress bar on position x/y with width w, height h
-     * @param x         - x-position of left lower corner (in pixels)
-     * @param y         - y-position of left lower corner (in pixels)
-     * @param width     - width of progress bar (in pixels)
+     * @param x0         - x-position of left lower corner (in pixels); eg: 34
+     * @param y0         - y-position of left lower corner (in pixels); eg: 50
+     * @param width     - width of progress bar (in pixels); eg: 60
      * @param height    - height of progressbar (in pixels; eg: 7
      */
-    //% blockId=oled_init_progress_bar block="init progress bar with x %x|y %y|width %w|height %h"
+    //% blockId=oled_init_progress_bar block="init progress bar with x0 %x0|y0 %y0|width %width|height %height"
     //% blockGap=6
     //% shim=oled_ssd1306::initProgressBar
-    export function initProgressBar(x: number, y: number, width: number, height: number = 7): void {
+    export function initProgressBar(x0: number, y0: number, width: number, height: number = 7): void {
         return;
     }
  
@@ -231,10 +235,10 @@ namespace oled_ssd1306 {
      * Show a progress bar with percentage of progress. initProgressBar must be called prior to this call!
      * @param percentage   - degree of done
      */
-    //% blockId=oled_show_progress_bar block="show progress bar with percentage %percentage"
+    //% blockId=oled_draw_progress_bar block="draw progress bar with percentage %percentage"
     //% blockGap=6
-    //% shim=oled_ssd1306::showProgressBar
-    export function showProgressBar(percentage: number): void {
+    //% shim=oled_ssd1306::drawProgressBar
+    export function drawProgressBar(percentage: number): void {
         return;
     }
    

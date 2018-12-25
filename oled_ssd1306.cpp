@@ -14,6 +14,15 @@ namespace oled_ssd1306 {
 	Adafruit_SSD1306_I2C *oled;
 
 	
+	// Drawing specific name space global variables.
+	// Will partly be set/reset with init functions
+	
+	// Colors
+	int lineColor = 1;
+	int txtFgColor = 1;
+	int txtBgColor = 1;
+	
+	
 	// Variables for progress bar
 	int progressBarX = 0;
 	int progressBarY = 0;
@@ -21,31 +30,67 @@ namespace oled_ssd1306 {
 	int progressBarHeight = 0;
 	bool progressBarBoxDrawn = false;
 
+
+	// Variables for circle
+	bool circleFilled = false;
+	int circleRadius = 0;
+
+	
 	// Variables for rectangle
 	bool rectangleFilled = false;
 	int rectangleEdgeRadius = 0;
-	int rectangleLineColor = WHITE;
+
 	
 	
-	// ################################## Functions ##################################
+	// ################################## Functions ########################################################################
 	//
-	void init(int height, int width){
-		if (oled != NULL) delete oled;
-		oled = new Adafruit_SSD1306_I2C(i2c, SSD1306_ADDRESS, height, width);
-		//oled->splash();
-		oled->display();
-	}
+	
+	// ### Initialisation ##################################################################################################
 	
 	
 	//%
-	void init_terminal(int height = 64, int width = 128){
+	void initDisplay(int height = 64, int width = 128, int i2c_address = 0x78){
+		// SSD1306_ADDRESS was changed to be setable!
 		if (oled != NULL) delete oled;
-		oled = new Adafruit_SSD1306_I2C(i2c, SSD1306_ADDRESS, height, width);
+		oled = new Adafruit_SSD1306_I2C(i2c, i2c_address, height, width);
 		oled->clearDisplay();
 		oled->display();
-		oled->setTextCursor(0, 0);
+		oled->set_textCursor(0, 0);
 	}
 
+
+	//%
+	void switchDisplayToOn(bool on = true) {
+		oled->isDisplay = on;
+		if(on) {
+		    oled->display();
+		}
+	}
+
+	
+	//%
+	void clearDisplay(){
+		oled->clearDisplay();
+		oled->display();
+	}
+
+
+	// ### Printing of text / numbers ######################################################################################
+
+	
+	//%
+	void setTextColor(int fgColor, int bgColor){
+		txtFgColor = fgColor;
+		txtBgColor = bgColor;
+		oled->setTextColor(fgColor, bgColor);
+	}
+
+	
+	//%
+	void setTextSize(int size) {
+		oled->setTextSize(size);
+	}
+	
 	
 	//%
 	void setTextCursorXY(int x, int y) {
@@ -60,46 +105,57 @@ namespace oled_ssd1306 {
 		oled->setTextCursor(column, row);
 	}
 	
-
-	//%
-	void setTextSize(int size) {
-		oled->setTextSize(size);
-	}
-	
 	
 	//%
-	void showString(StringData *text) {
+	void printString(StringData *text) {
 		oled->printf("%s\n", text->data);
 		oled->display();
 	}
     
 	
 	//%
-	void showNumber(int number) {
+	void printNumber(int number) {
 		oled->printf("%d\n", number);
 		oled->display();
 	}
     
+
+	// ### Drawing of lines, circles, rectangles etc. ######################################################################
+
+
+	//%
+	void setLineColor(int color){
+		lineColor = color;
+	}
+
 	
 	//%
-	void onOffDisplay(bool onOff = true) {
-		oled->isDisplay = onOff;
-		if(onOff) {
-		    oled->display();
+	void drawLine(int x0, int y0, int dx, int dy) {
+		int x1 = x0 + dx;
+		int y1 = y0 + dy;
+		oled->drawLine(x0, y0, x1, y1, lineColor);
+		if(oled->isDisplay) {
+			oled->display();
 		}
 	}
 
-	
-	//%
-	void clearDisplay(){
-		oled->clearDisplay();
-		oled->display();
-	}
 
+	//%
+    void initCircle(bool filled, int radius) {
+		circleFilled = filled;
+		circleRadius = radius;
+        return;
+    }
+	
 	
 	//%
-	void drawCircle(int x, int y, int r){
-		oled->drawCircle(x, y, r, WHITE);
+	void drawCircle(int x0, int y0){
+		if (!circleFilled) {
+				oled->drawCircle(x0, y0, circleRadius, lineColor);
+		} else {
+				oled->fillCircle(x0, y0, circleRadius, lineColor);
+		}
+
 		if(oled->isDisplay) {
 			oled->display();
 		}
@@ -107,62 +163,25 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void fillCircle(int x, int y, int r){
-		oled->fillCircle(x, y, r, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void drawLine(int x0, int y0, int x1, int y1){
-		oled->drawLine(x0, y0, x1, y1, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void fillRect(int x, int y, int w, int h){
-		oled->fillRect(x, y, w, h, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void drawRect(int x, int y, int w, int h){
-		oled->drawRect(x, y, w, h, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void initRectangle(bool filled, int edgeRadius, int lineColor) {
+	void initRectangle(bool filled, int edgeRadius) {
 		rectangleFilled = filled;
 		rectangleEdgeRadius = edgeRadius;
-		rectangleLineColor = lineColor;
-	}
+	}	
 
-
+	
 	//%
-	void drawRectangle(int x, int y, int width, int height) {
+	void drawRectangle(int x0, int y0, int width, int height) {
 		if (rectangleEdgeRadius == 0) {
 			if (!rectangleFilled) {
-					oled->drawRect(x, y, width, height, rectangleLineColor);
+					oled->drawRect(x0, y0, width, height, lineColor);
 			} else {
-					oled->fillRect(x, y, width, height, rectangleLineColor);
+					oled->fillRect(x0, y0, width, height, lineColor);
 			}
 		} else {
 			if (!rectangleFilled) {
-					oled->fillRoundRect(x, y, width, height, rectangleEdgeRadius, rectangleLineColor);
+					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, lineColor);
 			} else {
-					oled->fillRoundRect(x, y, width, height, rectangleEdgeRadius, rectangleLineColor);
+					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, lineColor);
 			}
 		}
 		
@@ -173,9 +192,9 @@ namespace oled_ssd1306 {
 	
 	
 	//%
-	void initProgressBar(int x, int y, int width, int height) {
-		progressBarX = x;
-		progressBarY = y;
+	void initProgressBar(int x0, int y0, int width, int height) {
+		progressBarX = x0;
+		progressBarY = y0;
 		progressBarWidth = width;
 		progressBarHeight = height;
 	}
@@ -200,24 +219,6 @@ namespace oled_ssd1306 {
 	// ************************************************************************
 	// THE FUNCTIONS BELOW DO NOT WORK CORRECTLY IN MAKECODE/CALLIOPE
 	// ************************************************************************
-	
-	
-	//%
-	void fillRoundRect(int x, int y, int w, int h, int r){
-		oled->fillRoundRect(x, y, w, h, r, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void drawRoundRect(int x, int y, int w, int h, int r){
-		oled->drawRoundRect(x, y, w, h, r, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
 
 	
 	//%
