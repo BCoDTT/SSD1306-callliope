@@ -148,8 +148,8 @@ namespace oled_ssd1306 {
 	void drawLine2(int x0, int y0, int width, int alpha) {
 		// acos(-1) == PI
 		double alphaRad = alpha*std::acos(-1)/180; 
-		int x1 = x0 + ( width - (width * std::sin(alphaRad)) );
-		int y1 = y0 + ( width - (width * std::cos(alphaRad)) );
+		int x1 = x0 + ( width - (width * std::sin(alphaRad) ) );
+		int y1 = y0 + ( width - (width * std::cos(alphaRad) ) );
 		oled->drawLine(x0, y0, x1, y1, lineColor);
 		if(oled->isDisplay) {
 			oled->display();
