@@ -1,7 +1,7 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
-#include "math.h"
+#include "cmath"
 
 using namespace pxt;
 
@@ -17,8 +17,10 @@ namespace oled_ssd1306 {
 	MicroBitI2C i2c(I2C_SDA0, I2C_SCL0);
 	Adafruit_SSD1306_I2C *oled;
 
+	
 	// Generic const
-
+	const double pi = acos(-1);
+	
 	
 	// Drawing specific name space global variables.
 	// Will partly be set/reset with init functions
@@ -147,7 +149,7 @@ namespace oled_ssd1306 {
 	//%
 	void drawLine2(int x0, int y0, int width, int alpha) {
 		// acos(-1) == PI
-		double alphaRad = alpha*acos(-1)/180; 
+		double alphaRad = alpha * pi / 180; 
 		int x1 = x0 + ( width - (width * sin(alphaRad) ) );
 		int y1 = y0 + ( width - (width * cos(alphaRad) ) );
 		oled->drawLine(x0, y0, x1, y1, lineColor);
@@ -218,8 +220,8 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void showProgressBar(int progress) {
-		int progressBarActWidth = progress * (progressBarWidth-4)/100;		
+	void drawProgressBar(int progress) {
+		int progressBarActWidth = progress * (progressBarWidth-4) / 100;		
 		int progressBarFillX = progressBarX + 2;
 		int progressBarFillY = progressBarY + 2;
 		int progressBarFillHeight = progressBarHeight - 4;
@@ -237,28 +239,7 @@ namespace oled_ssd1306 {
 
 	}
 
-	
-	// ************************************************************************
-	// THE FUNCTIONS BELOW DO NOT WORK CORRECTLY IN MAKECODE/CALLIOPE
-	// ************************************************************************
 
-	
-	//%
-	void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
-		oled->drawTriangle(x0, y0, x1, y1, x2, y2, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void fillTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
-		oled->fillTriangle(x0, y0, x1, y1, x2, y2, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
 
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
