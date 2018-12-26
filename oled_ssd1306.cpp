@@ -9,7 +9,7 @@ namespace oled_ssd1306 {
 	#define SSD1306_ADDRESS 0x78
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
-	#define PI 3,1415926535897932384626433832795
+	// #define PI 3,1415926535897932384626433832795
 	
 	#undef printf
 
@@ -232,29 +232,6 @@ namespace oled_ssd1306 {
 			oled->display();
 		}						
 
-	}
-
-	
-	// ************************************************************************
-	// THE FUNCTIONS BELOW DO NOT WORK CORRECTLY IN MAKECODE/CALLIOPE
-	// ************************************************************************
-
-	
-	//%
-	void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
-		oled->drawTriangle(x0, y0, x1, y1, x2, y2, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
-	}
-
-	
-	//%
-	void fillTriangle(int x0, int y0, int x1, int y1, int x2, int y2) {
-		oled->fillTriangle(x0, y0, x1, y1, x2, y2, WHITE);
-		if(oled->isDisplay) {
-			oled->display();
-		}
 	}
 
 	
