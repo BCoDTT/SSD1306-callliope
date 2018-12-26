@@ -1,7 +1,7 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
-#include "cmath"
+// #include "cmath"
 
 using namespace pxt;
 
@@ -19,7 +19,7 @@ namespace oled_ssd1306 {
 
 	
 	// Generic const
-	const double pi = acos(-1);
+	// const double pi = acos(-1);
 	
 	
 	// Drawing specific name space global variables.
@@ -148,14 +148,15 @@ namespace oled_ssd1306 {
 		
 	//%
 	void drawLine2(int x0, int y0, int width, int alpha) {
-		// acos(-1) == PI
-		double alphaRad = alpha * pi / 180; 
-		int x1 = x0 + ( width - (width * sin(alphaRad) ) );
-		int y1 = y0 + ( width - (width * cos(alphaRad) ) );
-		oled->drawLine(x0, y0, x1, y1, lineColor);
-		if(oled->isDisplay) {
-			oled->display();
-		}
+	//	// acos(-1) == PI
+	//	double alphaRad = alpha * pi / 180; 
+	//	int x1 = x0 + ( width - (width * sin(alphaRad) ) );
+	//	int y1 = y0 + ( width - (width * cos(alphaRad) ) );
+	//	oled->drawLine(x0, y0, x1, y1, lineColor);
+	//	if(oled->isDisplay) {
+	//		oled->display();
+	//	}
+	return;
 	}
 	
 
