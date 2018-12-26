@@ -57,13 +57,13 @@ namespace oled_ssd1306 {
 
 	/**
      * Set text foreground and background color (currently Black or White)
-     * @param fgColor    - text foreground color; eg: Color.White
-     * @param bgColor    - text background color; eg: Color.Black
+     * @param fgColor    - line color; eg: Color.White
+     * @param bgColor    - line color; eg: Color.Black
      */
     //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor|bgColor %bgColor"
     //% blockGap=6
     //% shim=oled_ssd1306::setTextColor
-    export function setTextColor(fgColor: Color = Color.White bgColor: Color = Color.Black): void {
+    export function setTextColor(fgColor: Color = Color.White, bgColor: Color = Color.Black): void {
         return;
     }
 	
@@ -170,7 +170,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_drawLine2 block="draw line with x0 %x0|y0 %y0|width %width|alpha %alpha"
     //% blockGap=6
     //% shim=oled_ssd1306::drawLine2
-    export function drawLine2(x0: number, y0: number, width: number, alpha: number): void {
+    export function drawLine(x0: number, y0: number, width: number, alpha: number): void {
         return;
     }
 	
@@ -259,6 +259,3 @@ namespace oled_ssd1306 {
    
     
 }
-
-
-
