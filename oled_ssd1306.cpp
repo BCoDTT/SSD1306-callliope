@@ -9,7 +9,6 @@ namespace oled_ssd1306 {
 	#define SSD1306_ADDRESS 0x78
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
-	#define PI 3,1415926535897932384626433832795
 	
 	#undef printf
 
@@ -17,6 +16,8 @@ namespace oled_ssd1306 {
 	//
 	MicroBitI2C i2c(I2C_SDA0, I2C_SCL0);
 	Adafruit_SSD1306_I2C *oled;
+
+	// Generic const
 
 	
 	// Drawing specific name space global variables.
@@ -145,8 +146,10 @@ namespace oled_ssd1306 {
 		
 	//%
 	void drawLine2(int x0, int y0, int width, int alpha) {
-		int x1 = x0 + ( width - (width * std::sin(alpha)) );
-		int y1 = y0 + ( width - (width * std::cos(alpha)) );
+		// acos(-1) == PI
+		double alphaRad = alpha*std::acos(-1)/180; 
+		int x1 = x0 + ( width - (width * std::sin(alphaRad)) );
+		int y1 = y0 + ( width - (width * std::cos(alphaRad)) );
 		oled->drawLine(x0, y0, x1, y1, lineColor);
 		if(oled->isDisplay) {
 			oled->display();
