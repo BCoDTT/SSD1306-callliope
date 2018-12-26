@@ -57,8 +57,8 @@ namespace oled_ssd1306 {
 
 	/**
      * Set text foreground and background color (currently Black or White)
-     * @param fgColor    - line color; eg: 1
-     * @param bgColor    - line color; eg: 0
+     * @param fgColor    - line color; eg: Color.White
+     * @param bgColor    - line color; eg: Color.Black
      */
     //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor|bgColor %bgColor"
     //% blockGap=6
@@ -135,7 +135,7 @@ namespace oled_ssd1306 {
 	
 	/**
      * Set line color for drawing (currently Black or White)
-     * @param color    - line color; eg: 1
+     * @param color    - line color; eg: Color.White
      */
     //% blockId=oled_set_draw_color block="Set line color to %color"
     //% blockGap=6
@@ -149,17 +149,32 @@ namespace oled_ssd1306 {
      * Draws a line on the OLED display from absolute coordinates x0/y0 to x1/y1 and draw color set.
      * @param x0    - x-position of start coordinate (in pixels)
      * @param y0    - y-position of start coordinate (in pixels)
-     * @param dx    - x-component of vector (in pixels)
-     * @param dy    - y-component of vector of end coordinate (in pixels)
+     * @param x1    - x-position of end coordinate (in pixels)
+     * @param y1    - y-component of vector of end coordinate (in pixels)
      */
-    //% blockId=oled_drawLine block="draw line with x0 %x0|y0 %y0|dx %dx|dy %dy"
+    //% blockId=oled_drawLine block="draw line with x0 %x0|y0 %y0|x1 %x1|y1 %y1"
     //% blockGap=6
     //% shim=oled_ssd1306::drawLine
-    export function drawLine(x0: number, y0: number, dx: number, dy: number): void {
+    export function drawLine(x0: number, y0: number, x1: number, y1: number): void {
         return;
     }
 
-
+	
+    /**
+     * Draws a line on the OLED display from absolute coordinates x0/y0 with width and direction
+     * @param x0    - x-position of start coordinate (in pixels)
+     * @param y0    - y-position of start coordinate (in pixels)
+     * @param width - width of line (in pixels)
+     * @param alpha - direction of line (in degree). alpha=0 is horizontal.
+     */
+    //% blockId=oled_drawLine2 block="draw line with x0 %x0|y0 %y0|width %width|alpha %alpha"
+    //% blockGap=6
+    //% shim=oled_ssd1306::drawLine2
+    export function drawLine(x0: number, y0: number, width: number, alpha: number): void {
+        return;
+    }
+	
+	
 	/**
      * Init circle draw mode (filled or not, radius)
      * @param filled    - to fill or not to fill the circle (boolean); eg: false

@@ -1,11 +1,16 @@
+
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
+#include "cmath"
+
 using namespace pxt;
 
 namespace oled_ssd1306 {
 	#define SSD1306_ADDRESS 0x78
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
+	#define PI 3,1415926535897932384626433832795
+	
 	#undef printf
 
 	// ################################## (Namespace) global variables  ##################################
@@ -130,15 +135,24 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void drawLine(int x0, int y0, int dx, int dy) {
-		int x1 = x0 + dx;
-		int y1 = y0 + dy;
+	void drawLine(int x0, int y0, int x1, int y1) {
 		oled->drawLine(x0, y0, x1, y1, lineColor);
 		if(oled->isDisplay) {
 			oled->display();
 		}
 	}
 
+		
+	//%
+	void drawLine2(int x0, int y0, int width, int alpha) {
+		int x1 = x0 + ( width - (width * std::sin(alpha)) );
+		int y1 = y0 + ( width - (width * std::cos(alpha)) )
+		oled->drawLine(x0, y0, x1, y1, lineColor);
+		if(oled->isDisplay) {
+			oled->display();
+		}
+	}
+	
 
 	//%
     void initCircle(bool filled, int radius) {
