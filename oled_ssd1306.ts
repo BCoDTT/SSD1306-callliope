@@ -135,7 +135,7 @@ namespace oled_ssd1306 {
 	
 	/**
      * Set line color for drawing (currently Black or White)
-     * @param color    - draw color for lines, boxes etc.; eg: Colors.White
+     * @param color    - draw color for lines, boxes etc.; eg: 1
      */
     //% blockId=oled_set_draw_color block="Set draw color to %color"
     //% blockGap=6
@@ -262,7 +262,7 @@ namespace oled_ssd1306 {
      * Indicates changes
      * @param percentage   - degree of done
      */
-    //% blockId=oled_version_id block="version id 20181227-2005"
+    //% blockId=oled_version_id block="version id 20181227-2019"
     //% blockGap=6
     export function versionId(): void {
         return;
@@ -271,5 +271,6 @@ namespace oled_ssd1306 {
 	// #
 	
 }
+
 
 
