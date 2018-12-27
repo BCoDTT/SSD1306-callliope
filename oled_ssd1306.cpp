@@ -1,7 +1,6 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
-#include "Bitmaps.h"
 
 
 using namespace pxt;
@@ -238,28 +237,6 @@ namespace oled_ssd1306 {
 		}						
 
 	}
-		
-
-	//%
-	void initBitmap(int width, int height) {
-		bitmapWidth = width;
-		bitmapHeight = height;
-	}
-	
-	
-	//%
-	void drawBitmap(int x0, int y0, char bitmapName[]) {
-		int bitmap;
-		bitmap = smiley_smile;
-		
-		oled->drawBitmap(x0, y0, *bitmap, width, height, drawColor);
-
-		if(oled->isDisplay) {
-			oled->display();
-		}		
-		
-	}
-
 
 	
 	// ## TEMP NEW FUNCTION
