@@ -140,7 +140,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_set_draw_color block="Set draw color to %color=oled_color_code_conv"
     //% blockGap=6
     //% shim=oled_ssd1306::setLineColor
-    export function setLineColor(color: number): void {
+    export function setDrawColor(color: number): void {
         return;
     }
 
@@ -262,7 +262,7 @@ namespace oled_ssd1306 {
      * Indicates changes
      * @param percentage   - degree of done
      */
-    //% blockId=oled_version_id block="version id 20181227-1807"
+    //% blockId=oled_version_id block="version id 20181227-1813"
     //% blockGap=6
     export function versionId(): void {
         return;
@@ -292,9 +292,5 @@ namespace oled_ssd1306 {
 	
 	// #
 }
-
-
-
-
 
 
