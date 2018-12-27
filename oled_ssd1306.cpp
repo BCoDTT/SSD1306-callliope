@@ -1,6 +1,7 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
+#include "Bitmaps.h"
 
 
 using namespace pxt;
@@ -24,7 +25,7 @@ namespace oled_ssd1306 {
 	// Will partly be set/reset with init functions
 	
 	// Colors
-	int lineColor = 1;
+	int drawColor = 1;
 	int txtFgColor = 1;
 	int txtBgColor = 1;
 	
@@ -130,14 +131,14 @@ namespace oled_ssd1306 {
 
 
 	//%
-	void setLineColor(int color){
-		lineColor = color;
+	void setDrawColor(int color){
+		drawColor = color;
 	}
 
 	
 	//%
 	void drawLine(int x0, int y0, int x1, int y1) {
-		oled->drawLine(x0, y0, x1, y1, lineColor);
+		oled->drawLine(x0, y0, x1, y1, drawColor);
 		if(oled->isDisplay) {
 			oled->display();
 		}
@@ -148,7 +149,7 @@ namespace oled_ssd1306 {
 	void drawLine2(int x0, int y0, int width, int alpha) {
 		int x1 = x0 + ( width - (width * std::sin(alpha)) );
 		int y1 = y0 + ( width - (width * std::cos(alpha)) );
-		oled->drawLine(x0, y0, x1, y1, lineColor);
+		oled->drawLine(x0, y0, x1, y1, drawColor);
 		if(oled->isDisplay) {
 			oled->display();
 		}
@@ -166,9 +167,9 @@ namespace oled_ssd1306 {
 	//%
 	void drawCircle(int x0, int y0){
 		if (!circleFilled) {
-				oled->drawCircle(x0, y0, circleRadius, lineColor);
+				oled->drawCircle(x0, y0, circleRadius, drawColor);
 		} else {
-				oled->fillCircle(x0, y0, circleRadius, lineColor);
+				oled->fillCircle(x0, y0, circleRadius, drawColor);
 		}
 
 		if(oled->isDisplay) {
@@ -188,15 +189,15 @@ namespace oled_ssd1306 {
 	void drawRectangle(int x0, int y0, int width, int height) {
 		if (rectangleEdgeRadius == 0) {
 			if (!rectangleFilled) {
-					oled->drawRect(x0, y0, width, height, lineColor);
+					oled->drawRect(x0, y0, width, height, drawColor);
 			} else {
-					oled->fillRect(x0, y0, width, height, lineColor);
+					oled->fillRect(x0, y0, width, height, drawColor);
 			}
 		} else {
 			if (!rectangleFilled) {
-					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, lineColor);
+					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, drawColor);
 			} else {
-					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, lineColor);
+					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, drawColor);
 			}
 		}
 		
@@ -223,17 +224,32 @@ namespace oled_ssd1306 {
 		int progressBarFillHeight = progressBarHeight - 4;
 		
 		if (!progressBarBoxDrawn) { 
-			oled->drawRect(progressBarX, progressBarY, progressBarWidth, progressBarHeight, lineColor);
+			oled->drawRect(progressBarX, progressBarY, progressBarWidth, progressBarHeight, drawColor);
 			progressBarBoxDrawn = true;
 		}
 		
-		oled->fillRect(progressBarFillX, progressBarFillY, progressBarActWidth, progressBarFillHeight, lineColor);
+		oled->fillRect(progressBarFillX, progressBarFillY, progressBarActWidth, progressBarFillHeight, drawColor);
 
 		if(oled->isDisplay) {
 			oled->display();
 		}						
 
 	}
+		
+
+	//%
+	void initBitmap(int width, int height) {
+		bitmapWidth = width;
+		bitmapHeight = height;
+	}
+	
+	
+	//%
+	void drawBitmap(int x, int y, string bitmapName) {
+	unsigned int bitmap;
+	bitmap = smiley_smile;
+	}
+
 
 	
 	// ## TEMP NEW FUNCTION
