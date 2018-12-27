@@ -251,13 +251,22 @@ namespace oled_ssd1306 {
      * @param percentage   - degree of done
      */
     //% blockId=oled_draw_progress_bar block="draw progress bar with percentage %percentage"
-    //% blockGap=6
+    //% blockGap=10
     //% shim=oled_ssd1306::drawProgressBar
     export function drawProgressBar(percentage: number): void {
         return;
     }
    
-    
+      /**
+     * Indicates changes
+     * @param percentage   - degree of done
+     */
+    //% blockId=oled_version_id block="version id 20181227-1720"
+    //% blockGap=6
+    export function drawProgressBar(percentage: number): void {
+        return;
+    }
+	
 }
 
 
