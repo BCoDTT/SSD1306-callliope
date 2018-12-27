@@ -57,13 +57,13 @@ namespace oled_ssd1306 {
 
 	/**
      * Set text foreground and background color (currently Black or White)
-     * @param fgColor    - line color; eg: White
-     * @param bgColor    - line color; eg: Black
+     * @param fgColor    - line color; eg: Color.White
+     * @param bgColor    - line color; eg: Color.Black
      */
-    //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor=oled_color_code_conv|bgColor %bgColor=oled_color_code_conv"
+    //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor|bgColor %bgColor"
     //% blockGap=6
     //% shim=oled_ssd1306::setTextColor
-    export function setTextColor(fgColor: number, bgColor: number): void {
+    export function setTextColor(fgColor: Color = Color.White, bgColor: Color = Color.Black): void {
         return;
     }
 	
@@ -134,13 +134,13 @@ namespace oled_ssd1306 {
 
 	
 	/**
-     * Set draw color for drawing (lines, circles etc. Currently only Black or White is supported.)
-     * @param color    - line color; eg: White
+     * Set line color for drawing (currently Black or White)
+     * @param color    - line color; eg: Color.White
      */
-    //% blockId=oled_set_draw_color block="Set draw color to %color=oled_color_code_conv"
+    //% blockId=oled_set_draw_color block="Set line color to %color"
     //% blockGap=6
-    //% shim=oled_ssd1306::setDrawColor
-    export function setDrawColor(color: number): void {
+    //% shim=oled_ssd1306::setLineColor
+    export function setLineColor(color: Color = Color.White): void {
         return;
     }
 
@@ -256,31 +256,6 @@ namespace oled_ssd1306 {
     export function drawProgressBar(percentage: number): void {
         return;
     }
- 
-
-	// ### Handling Bitmaps #############################################################################################
-
-
-
-	// ### Handling ENUMS ###############################################################################################
-	
-	
-    /**
-     * Returns the color corresponding to color name
-     */
-    //% blockId="oled_color_code_conv" block="%col"
-    //% blockHidden=true
-    export function colors(col: Colors): number {
-        // even though it might not look like, this is more
-        // (memory) efficient than the C++ implementation, because the
-        // strings are statically allocated and take no RAM 
-        switch (col) {
-            case Colors.Black: return 0;
-				break;
-            case Colors.White: return 1;
-				break;
-            default: return 1;
-        }
-	}  
+   
     
 }

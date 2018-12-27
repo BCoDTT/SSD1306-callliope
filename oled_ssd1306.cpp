@@ -1,12 +1,11 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
-
+#include "cmath"
 
 using namespace pxt;
 
 namespace oled_ssd1306 {
-	
 	#define SSD1306_ADDRESS 0x78
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
@@ -24,7 +23,7 @@ namespace oled_ssd1306 {
 	// Will partly be set/reset with init functions
 	
 	// Colors
-	int drawColor = 1;
+	int lineColor = 1;
 	int txtFgColor = 1;
 	int txtBgColor = 1;
 	
@@ -46,9 +45,6 @@ namespace oled_ssd1306 {
 	bool rectangleFilled = false;
 	int rectangleEdgeRadius = 0;
 
-	// Variables for bitmaps
-	int bitmapWidth = 50;
-	int bitmapHeight = 50;
 	
 	
 	// ################################## Functions ########################################################################
@@ -133,14 +129,14 @@ namespace oled_ssd1306 {
 
 
 	//%
-	void setDrawColor(int color){
-		drawColor = color;
+	void setLineColor(int color){
+		lineColor = color;
 	}
 
 	
 	//%
 	void drawLine(int x0, int y0, int x1, int y1) {
-		oled->drawLine(x0, y0, x1, y1, drawColor);
+		oled->drawLine(x0, y0, x1, y1, lineColor);
 		if(oled->isDisplay) {
 			oled->display();
 		}
@@ -151,7 +147,7 @@ namespace oled_ssd1306 {
 	void drawLine2(int x0, int y0, int width, int alpha) {
 		int x1 = x0 + ( width - (width * std::sin(alpha)) );
 		int y1 = y0 + ( width - (width * std::cos(alpha)) );
-		oled->drawLine(x0, y0, x1, y1, drawColor);
+		oled->drawLine(x0, y0, x1, y1, lineColor);
 		if(oled->isDisplay) {
 			oled->display();
 		}
@@ -169,9 +165,9 @@ namespace oled_ssd1306 {
 	//%
 	void drawCircle(int x0, int y0){
 		if (!circleFilled) {
-				oled->drawCircle(x0, y0, circleRadius, drawColor);
+				oled->drawCircle(x0, y0, circleRadius, lineColor);
 		} else {
-				oled->fillCircle(x0, y0, circleRadius, drawColor);
+				oled->fillCircle(x0, y0, circleRadius, lineColor);
 		}
 
 		if(oled->isDisplay) {
@@ -191,15 +187,15 @@ namespace oled_ssd1306 {
 	void drawRectangle(int x0, int y0, int width, int height) {
 		if (rectangleEdgeRadius == 0) {
 			if (!rectangleFilled) {
-					oled->drawRect(x0, y0, width, height, drawColor);
+					oled->drawRect(x0, y0, width, height, lineColor);
 			} else {
-					oled->fillRect(x0, y0, width, height, drawColor);
+					oled->fillRect(x0, y0, width, height, lineColor);
 			}
 		} else {
 			if (!rectangleFilled) {
-					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, drawColor);
+					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, lineColor);
 			} else {
-					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, drawColor);
+					oled->fillRoundRect(x0, y0, width, height, rectangleEdgeRadius, lineColor);
 			}
 		}
 		
@@ -219,18 +215,18 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void drawProgressBar(int progress) {
+	void showProgressBar(int progress) {
 		int progressBarActWidth = progress * (progressBarWidth-4)/100;		
 		int progressBarFillX = progressBarX + 2;
 		int progressBarFillY = progressBarY + 2;
 		int progressBarFillHeight = progressBarHeight - 4;
 		
 		if (!progressBarBoxDrawn) { 
-			oled->drawRect(progressBarX, progressBarY, progressBarWidth, progressBarHeight, drawColor);
+			oled->drawRect(progressBarX, progressBarY, progressBarWidth, progressBarHeight, lineColor);
 			progressBarBoxDrawn = true;
 		}
 		
-		oled->fillRect(progressBarFillX, progressBarFillY, progressBarActWidth, progressBarFillHeight, drawColor);
+		oled->fillRect(progressBarFillX, progressBarFillY, progressBarActWidth, progressBarFillHeight, lineColor);
 
 		if(oled->isDisplay) {
 			oled->display();
@@ -238,43 +234,6 @@ namespace oled_ssd1306 {
 
 	}
 
-	
-	// ## TEMP NEW FUNCTION
-	
-    /**
-    * Gets the serial RX buffer size as number
-    */
-    //% blockId=serial_get_rx_buffer_size block="serial|get serial RX buffer size"
-    int getSerialRxBufferSize() {
-      int n = uBit.serial.getRxBufferSize();
-      return n;
-	}
-
-	
-	/**
-    * Reads one character from the serial RX buffer
-    */
-    //% blockId=serial_read_char_from_rx_buffer block="serial|read char from RX buffer"
-    StringData* readCharFromSerialRxBuffer() {
-      int n = uBit.serial.getRxBufferSize();
-      if (n == 0) return ManagedString("").leakData();
-      return ManagedString(uBit.serial.read(1, MicroBitSerialMode::ASYNC)).leakData();
-	}
-	
-	
-	/**
-    * Reads the buffered received data as a string
-    */
-    //% blockId=serial_read_rx_buffer block="serial|read RX buffer"
-    StringData* readSerialRxBuffer() {
-      int n = uBit.serial.getRxBufferSize();
-      if (n == 0) ManagedString("").leakData();
-      return ManagedString(uBit.serial.read(n, MicroBitSerialMode::ASYNC)).leakData();
-	}
-
-	
-	// ### END #################################################################################################################
-	
 	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
