@@ -148,10 +148,15 @@ namespace oled_ssd1306 {
 
 		
 	//%
-	void drawLine2(int x0, int y0, int width, int alpha) {
+	void drawLine2(int x0, int y0, int width, int alpha) {		
+		
 		int alphaRad = alpha * pi / 180;
-		int x1 = x0 + ( width - (width * std::sin(alphaRad)) );
-		int y1 = y0 + ( width - (width * std::cos(alphaRad)) );
+		
+		int gamma = 90 - alpha;
+		int gammaRad = gamma * pi / 180;
+		
+		int x1 = x0 + ( width * std::sin(gammaRad) );
+		int y1 = y0 + ( width * std::sind(alphaRad)) );
 		//int x1 = x0 + 20;
 		//int y1 = y0 + 0;
 		oled->drawLine(x0, y0, x1, y1, drawColor);
@@ -245,6 +250,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
 
