@@ -166,7 +166,7 @@ namespace oled_ssd1306 {
      * @param y0    - y-position of start coordinate (in pixels)
      * @param width - width of line (in pixels)
      */
-    //% blockId=oled_init_drawLine2 block="draw line using alpha with x0 %x0|y0 %y0|width %width"
+    //% blockId=oled_init_drawLine2 block="init draw line using angle with x0 %x0|y0 %y0|width %width"
     //% blockGap=6
     //% shim=oled_ssd1306::initDrawLine2
     export function initDrawLine2(x0: number, y0: number, width: number): void {
@@ -179,7 +179,7 @@ namespace oled_ssd1306 {
 	 * Function init draw line has to be called first!
      * @param alpha - direction of line (in degree). alpha=0 is horizontal.
      */
-    //% blockId=oled_drawLine2 block="draw line using alpha %alpha"
+    //% blockId=oled_drawLine2 block="draw line using angle with alpha %alpha"
     //% blockGap=6
     //% shim=oled_ssd1306::drawLine2
     export function drawLine2(alpha: number): void {
@@ -271,10 +271,9 @@ namespace oled_ssd1306 {
    
    
      /**
-     * Indicates changes
-     * @param percentage   - degree of done
+     * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20181228-0015"
+    //% blockId=oled_version_id block="version id 20181228-0036"
     //% blockGap=6
     export function versionId(): void {
         return;
@@ -283,17 +282,4 @@ namespace oled_ssd1306 {
 	// #
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

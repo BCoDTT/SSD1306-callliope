@@ -157,7 +157,6 @@ namespace oled_ssd1306 {
 		drawLine2_x0 = x0;
 		drawLine2_y0 = y0;
 		drawLine2_width = width;
-	
 	}
 	
 		
@@ -264,18 +263,4 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
