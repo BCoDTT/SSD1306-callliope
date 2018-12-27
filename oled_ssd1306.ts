@@ -63,7 +63,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor=oled_color_code_conv|bgColor %bgColor=oled_color_code_conv"
     //% blockGap=6
     //% shim=oled_ssd1306::setTextColor
-    export function setTextColor(fgColor: %fgColor, bgColor: %bgColor): void {
+    export function setTextColor(fgColor: number, bgColor: number): void {
         return;
     }
 	
@@ -140,7 +140,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_set_draw_color block="Set draw color to %color=oled_color_code_conv"
     //% blockGap=6
     //% shim=oled_ssd1306::setDrawColor
-    export function setDrawColor(color: %color): void {
+    export function setDrawColor(color: number): void {
         return;
     }
 
@@ -302,9 +302,11 @@ namespace oled_ssd1306 {
         // (memory) efficient than the C++ implementation, because the
         // strings are statically allocated and take no RAM 
         switch (col) {
-            case Colors.Black: return 0
-            case Colors.White: return 1
-            default: return 1
+            case Colors.Black: return 0;
+				break;
+            case Colors.White: return 1;
+				break;
+            default: return 1;
         }
 	}  
     
