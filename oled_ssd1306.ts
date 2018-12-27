@@ -263,7 +263,7 @@ namespace oled_ssd1306 {
      */
     //% blockId=oled_version_id block="version id 20181227-1728"
     //% blockGap=6
-    export function drawProgressBar(percentage: number): void {
+    export function versionId(): void {
         return;
     }
 	
