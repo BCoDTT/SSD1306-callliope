@@ -170,7 +170,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_drawLine2 block="draw line with x0 %x0|y0 %y0|width %width|alpha %alpha"
     //% blockGap=6
     //% shim=oled_ssd1306::drawLine2
-    export function drawLine(x0: number, y0: number, width: number, alpha: number): void {
+    export function drawLine2(x0: number, y0: number, width: number, alpha: number): void {
         return;
     }
 	
@@ -262,7 +262,7 @@ namespace oled_ssd1306 {
      * Indicates changes
      * @param percentage   - degree of done
      */
-    //% blockId=oled_version_id block="version id 20181227-1940"
+    //% blockId=oled_version_id block="version id 20181227-1954"
     //% blockGap=6
     export function versionId(): void {
         return;
