@@ -270,7 +270,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_init_bitmap block="init bitmap with width %width|height %height"
     //% blockGap=6
     //% shim=oled_ssd1306::initBitmap
-    export function initBitmap(widht: number, height): void {
+    export function initBitmap(widht: number, height: number): void {
         return;
     }
 	
@@ -284,7 +284,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_draw_bitmap block="draw bitmap with name %name|x0 %x0|y0 %y0"
     //% blockGap=6
     //% shim=oled_ssd1306::drawBitmap
-    export function drawBitmap(name: string, x0: number, y0: nummber): void {
+    export function drawBitmap(name: string, x0: number, y0: number): void {
         return;
     }
 
