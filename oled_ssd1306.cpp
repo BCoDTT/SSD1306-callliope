@@ -20,6 +20,9 @@ namespace oled_ssd1306 {
 	Adafruit_SSD1306_I2C *oled;
 
 	
+	// Winkel
+	const double pi = std::acos(-1);
+	
 	// Drawing specific name space global variables.
 	// Will partly be set/reset with init functions
 	
@@ -146,10 +149,11 @@ namespace oled_ssd1306 {
 		
 	//%
 	void drawLine2(int x0, int y0, int width, int alpha) {
-		//int x1 = x0 + ( width - (width * std::sin(alpha)) );
-		//int y1 = y0 + ( width - (width * std::cos(alpha)) );
-		int x1 = x0 + 20;
-		int y1 = y0 + 0;
+		int alphaRad = alpha * pi / 180;
+		int x1 = x0 + ( width - (width * std::sin(alphaRad)) );
+		int y1 = y0 + ( width - (width * std::cos(alphaRad)) );
+		//int x1 = x0 + 20;
+		//int y1 = y0 + 0;
 		oled->drawLine(x0, y0, x1, y1, drawColor);
 		if(oled->isDisplay) {
 			oled->display();
