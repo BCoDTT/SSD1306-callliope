@@ -251,7 +251,7 @@ namespace oled_ssd1306 {
     * Reads the buffered received data as a string
     */
     //% blockId=serial_read_rx_buffer block="serial|read RX buffer"
-    StringData* readBuffer() {
+    StringData* readSerialRxBuffer() {
       int n = uBit.serial.getRxBufferSize();
       if (n == 0) return "";
       return uBit.serial.read(n, MicroBitSerialMode::ASYNC);
