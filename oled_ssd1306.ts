@@ -262,7 +262,7 @@ namespace oled_ssd1306 {
      * Indicates changes
      * @param percentage   - degree of done
      */
-    //% blockId=oled_version_id block="version id 20181227-2214"
+    //% blockId=oled_version_id block="version id 20181227-2224"
     //% blockGap=6
     export function versionId(): void {
         return;
@@ -271,6 +271,3 @@ namespace oled_ssd1306 {
 	// #
 	
 }
-
-
-
