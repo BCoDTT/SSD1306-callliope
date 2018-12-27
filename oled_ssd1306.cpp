@@ -240,8 +240,8 @@ namespace oled_ssd1306 {
     /**
     * Gets the serial RX buffer size as number
     */
-    //% blockId=serial_read_rx_buffer_size block="serial|get serial RX buffer size"
-    int getserialRxBufferSize() {
+    //% blockId=serial_get_rx_buffer_size block="serial|get serial RX buffer size"
+    int getSerialRxBufferSize() {
       int n = uBit.serial.getRxBufferSize();
       return n;
 	}
