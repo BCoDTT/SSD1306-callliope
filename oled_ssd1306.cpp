@@ -265,7 +265,7 @@ namespace oled_ssd1306 {
     StringData* readSerialRxBuffer() {
       int n = uBit.serial.getRxBufferSize();
       if (n == 0) ManagedString("").leakData();
-      return ManagedData(uBit.serial.read(n, MicroBitSerialMode::ASYNC)).leakData();
+      return ManagedString(uBit.serial.read(n, MicroBitSerialMode::ASYNC)).leakData();
 	}
 
 	
