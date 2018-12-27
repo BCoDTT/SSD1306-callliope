@@ -19,12 +19,12 @@ namespace oled_ssd1306 {
      * Initializes the I2C OLED display driven by SSD1306 controller
      * @param height        - height of display (in pixels); eg: 64
      * @param width         - width of display (in pixels); eg: 128
-     * @param i2c_address	- module's I2C address (in HEX); eg: 0x78
+     * @param i2c_address	- module's I2C address (in HEX); eg: 120
      */
     //% blockId=oled_init_display block="initialize OLED with height %height|width %width|address %i2c_address"
     //% blockGap=6
     //% shim=oled_ssd1306::initDisplay
-    export function initDisplay(height: number = 64, width: number = 128, i2c_address = 0x78): void {
+    export function initDisplay(height: number = 64, width: number = 128, i2c_address: number = 120): void {
         return;
     }
 	
@@ -261,7 +261,7 @@ namespace oled_ssd1306 {
      * Indicates changes
      * @param percentage   - degree of done
      */
-    //% blockId=oled_version_id block="version id 20181227-1728"
+    //% blockId=oled_version_id block="version id 20181227-1740"
     //% blockGap=6
     export function versionId(): void {
         return;

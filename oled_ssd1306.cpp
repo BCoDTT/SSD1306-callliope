@@ -1,7 +1,7 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
-#include "cmath"
+
 
 using namespace pxt;
 
