@@ -47,6 +47,9 @@ namespace oled_ssd1306 {
 	bool rectangleFilled = false;
 	int rectangleEdgeRadius = 0;
 
+	// Variables for bitmaps
+	int bitmapWidth = 50;
+	int bitmapHeight = 50;
 	
 	
 	// ################################## Functions ########################################################################
@@ -245,9 +248,16 @@ namespace oled_ssd1306 {
 	
 	
 	//%
-	void drawBitmap(int x, int y, string bitmapName) {
-	unsigned int bitmap;
-	bitmap = smiley_smile;
+	void drawBitmap(int x0, int y0, char bitmapName[]) {
+		unsigned int bitmap;
+		bitmap = smiley_smile;
+		
+		oled->drawBitmap(int x0, int y0, const uint8_t *bitmap, int width, int height, int drawColor);
+
+		if(oled->isDisplay) {
+			oled->display();
+		}		
+		
 	}
 
 

@@ -256,8 +256,42 @@ namespace oled_ssd1306 {
     export function drawProgressBar(percentage: number): void {
         return;
     }
-  
+ 
 
+	// ### Handling Bitmaps #############################################################################################
+
+	
+	/**
+     * Init drawing a bitmap with width w, height h
+	 * Bitmap will  be drawn with color set in setDrawColor.
+     * @param width         - width of bitmap to be drawn (in pixels); eg: 50
+     * @param height        - height of bitmap to be drawn (in pixels); eg: 50
+     */
+    //% blockId=oled_init_bitmap block="init bitmap with width %width|height %height"
+    //% blockGap=6
+    //% shim=oled_ssd1306::initBitmap
+    export function initBitmap(widht: number, height): void {
+        return;
+    }
+	
+	/**
+     * Actually draw a bitmap with name bitmapName at position x0/y0
+	 * Bitmaps are defined in Bitmap.h
+	 * Bitmap will  be drawn with color set in setDrawColor.
+     * @param x0         - x-position of left lower corner (in pixels); eg: 38
+     * @param y0         - y-position of left lower corner (in pixels); eg: 7
+     */
+    //% blockId=oled_draw_bitmap block="draw bitmap with name %name|x0 %x0|y0 %y0"
+    //% blockGap=6
+    //% shim=oled_ssd1306::drawBitmap
+    export function drawBitmap(name: string, x0: number, y0: nummber): void {
+        return;
+    }
+
+
+	// ### Handling ENUMS ###############################################################################################
+	
+	
     /**
      * Returns the color corresponding to color name
      */
