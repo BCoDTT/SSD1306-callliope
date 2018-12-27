@@ -21,7 +21,7 @@ namespace oled_ssd1306 {
 
 	
 	// Winkel
-	const double pi = std::acos(-1);
+	const long double pi = std::acos(-1);
 	
 	// Drawing specific name space global variables.
 	// Will partly be set/reset with init functions
@@ -150,13 +150,13 @@ namespace oled_ssd1306 {
 	//%
 	void drawLine2(int x0, int y0, int width, int alpha) {		
 		
-		double alphaRad = alpha * pi / 180;
+		long double alphaRad = alpha * pi / 180;
 		
-		double gamma = 90 - alpha;
-		double gammaRad = gamma * pi / 180;
+		long double gamma = 90 - alpha;
+		long double gammaRad = gamma * pi / 180;
 		
-		int x1 = (int)(x0 + ( width * std::sin(gammaRad) ));
-		int y1 = (int)(y0 - ( width * std::sin(alphaRad) ));
+		int x1 = (int)(round( x0 + ( width * std::sin(gammaRad))) );
+		int y1 = (int)(round( y0 - ( width * std::sin(alphaRad))) );
 		
 		oled->drawLine(x0, y0, x1, y1, drawColor);
 		
@@ -250,6 +250,10 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
+
+
+
 
 
 
