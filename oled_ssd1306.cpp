@@ -249,10 +249,10 @@ namespace oled_ssd1306 {
 	
 	//%
 	void drawBitmap(int x0, int y0, char bitmapName[]) {
-		unsigned int bitmap;
+		int bitmap;
 		bitmap = smiley_smile;
 		
-		oled->drawBitmap(int x0, int y0, const uint8_t *bitmap, int width, int height, int drawColor);
+		oled->drawBitmap(x0, y0, *bitmap, width, height, drawColor);
 
 		if(oled->isDisplay) {
 			oled->display();
