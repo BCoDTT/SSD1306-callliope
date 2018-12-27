@@ -135,12 +135,12 @@ namespace oled_ssd1306 {
 	
 	/**
      * Set line color for drawing (currently Black or White)
-     * @param color    - line color; eg: Color.White
+     * @param color    - draw color for lines, boxes etc.
      */
     //% blockId=oled_set_draw_color block="Set draw color to %color=oled_color_code_conv"
     //% blockGap=6
-    //% shim=oled_ssd1306::setLineColor
-    export function setDrawColor(color: number): void {
+    //% shim=oled_ssd1306::setDrawColor
+    export function setDrawColor(color: number) : void {
         return;
     }
 
@@ -262,7 +262,7 @@ namespace oled_ssd1306 {
      * Indicates changes
      * @param percentage   - degree of done
      */
-    //% blockId=oled_version_id block="version id 20181227-1813"
+    //% blockId=oled_version_id block="version id 20181227-1901"
     //% blockGap=6
     export function versionId(): void {
         return;
@@ -274,10 +274,10 @@ namespace oled_ssd1306 {
 	
     /**
      * Returns the color corresponding to color name
+	 * Removed: blockHidden=true
      */
     //% blockId="oled_color_code_conv" block="%col"
-    //% blockHidden=true
-    export function colors(col: Colors): number {
+    export function colors(col: Colors) : number {
         // even though it might not look like, this is more
         // (memory) efficient than the C++ implementation, because the
         // strings are statically allocated and take no RAM 
@@ -292,5 +292,7 @@ namespace oled_ssd1306 {
 	
 	// #
 }
+
+
 
 
