@@ -235,6 +235,32 @@ namespace oled_ssd1306 {
 	}
 
 	
+	// ## TEMP NEW FUNCTION
+	
+    /**
+    * Gets the serial RX buffer size as number
+    */
+    //% blockId=serial_read_rx_buffer_size block="serial|get serial RX buffer size"
+    int getserialRxBufferSize() {
+      int n = uBit.serial.getRxBufferSize();
+      return n;
+	}
+
+	
+	/**
+    * Reads the buffered received data as a string
+    */
+    //% blockId=serial_read_rx_buffer block="serial|read RX buffer"
+    StringData* readBuffer() {
+      int n = uBit.serial.getRxBufferSize();
+      if (n == 0) return "";
+      return uBit.serial.read(n, MicroBitSerialMode::ASYNC);
+}
+
+	
+	// ### END #################################################################################################################
+	
+	
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
