@@ -29,9 +29,13 @@ namespace oled_ssd1306 {
 	// Colors
 	int drawColor = 1;
 	int txtFgColor = 1;
-	int txtBgColor = 1;
-	
-	
+	int txtBgColor = 0;
+
+	// Variables for drawLine2
+	int drawLine2_x0 = 0;
+	int drawLine2_y0 = 0;
+	int drawLine2_width = 0;
+		
 	// Variables for progress bar
 	int progressBarX = 0;
 	int progressBarY = 0;
@@ -146,19 +150,29 @@ namespace oled_ssd1306 {
 		}
 	}
 
+	
+	//%
+	void initDrawLine2(int x0, int y0, int width) {		
+		
+		drawLine2_x0 = x0;
+		drawLine2_y0 = y0;
+		drawLine2_width = width;
+	
+	}
+	
 		
 	//%
-	void drawLine2(int x0, int y0, int width, int alpha) {		
+	void drawLine2(int alpha) {		
 		
 		long double alphaRad = alpha * pi / 180;
 		
 		long double gamma = 90 - alpha;
 		long double gammaRad = gamma * pi / 180;
 		
-		int x1 = (int)(round( x0 + ( width * std::sin(gammaRad))) );
-		int y1 = (int)(round( y0 - ( width * std::sin(alphaRad))) );
+		int x1 = (int)(round( drawLine2_x0 + ( drawLine2_width * std::sin(gammaRad))) );
+		int y1 = (int)(round( drawLine2_y0 - ( drawLine2_width * std::sin(alphaRad))) );
 		
-		oled->drawLine(x0, y0, x1, y1, drawColor);
+		oled->drawLine(drawLine2_x0, drawLine2_y0, x1, y1, drawColor);
 		
 		if(oled->isDisplay) {
 			oled->display();
