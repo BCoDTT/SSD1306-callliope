@@ -134,13 +134,13 @@ namespace oled_ssd1306 {
 
 	
 	/**
-     * Set line color for drawing (currently Black or White)
+     * Set draw color for drawing (lines, circles etc. Currently only Black or White is supported.)
      * @param color    - line color; eg: White
      */
-    //% blockId=oled_set_draw_color block="Set line color to %color=oled_color_code_conv"
+    //% blockId=oled_set_draw_color block="Set draw color to %color=oled_color_code_conv"
     //% blockGap=6
-    //% shim=oled_ssd1306::setLineColor
-    export function setLineColor(color: %color): void {
+    //% shim=oled_ssd1306::setDrawColor
+    export function setDrawColor(color: %color): void {
         return;
     }
 
