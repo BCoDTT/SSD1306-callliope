@@ -60,10 +60,10 @@ namespace oled_ssd1306 {
      * @param fgColor    - line color; eg: Color.White
      * @param bgColor    - line color; eg: Color.Black
      */
-    //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor|bgColor %bgColor"
+    //% blockId=oled_set_text_color block="Set text color to fgColor %fgColor=oled_color_code_conv|bgColor %bgColor=oled_color_code_conv"
     //% blockGap=6
     //% shim=oled_ssd1306::setTextColor
-    export function setTextColor(fgColor: Color = Color.White, bgColor: Color = Color.Black): void {
+    export function setTextColor(fgColor: %fgColor = colors(Color.White), bgColor: %bgColor = colors(Color.Black)): void {
         return;
     }
 	
@@ -256,6 +256,22 @@ namespace oled_ssd1306 {
     export function drawProgressBar(percentage: number): void {
         return;
     }
-   
+  
+
+    /**
+     * Returns the color corresponding to color name
+     */
+    //% blockId="oled_color_code_conv" block="%col"
+    //% blockHidden=true
+    export function colors(col: Colors): number {
+        // even though it might not look like, this is more
+        // (memory) efficient than the C++ implementation, because the
+        // strings are statically allocated and take no RAM 
+        switch (col) {
+            case Colors.Black: return 0
+            case Colors.White: return 1
+            default: return 1
+        }
+}  
     
 }

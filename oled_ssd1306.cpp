@@ -1,11 +1,12 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
-#include "cmath"
+
 
 using namespace pxt;
 
 namespace oled_ssd1306 {
+	
 	#define SSD1306_ADDRESS 0x78
 	#define FONT_WIDTH 6
 	#define FONT_HEIGHT 8
