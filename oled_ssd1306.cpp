@@ -251,10 +251,10 @@ namespace oled_ssd1306 {
     * Reads one character from the serial RX buffer
     */
     //% blockId=serial_read_char_from_rx_buffer block="serial|read char from RX buffer"
-    string readCharFromSerialRxBuffer() {
+    StringData* readCharFromSerialRxBuffer() {
       int n = uBit.serial.getRxBufferSize();
-      if (n == 0) return "";
-      return uBit.serial.read(1, MicroBitSerialMode::ASYNC);
+      if (n == 0) return ManagedString("").leakData();
+      return ManagedString(uBit.serial.read(1, MicroBitSerialMode::ASYNC)).leakData();
 	}
 	
 	
@@ -264,8 +264,8 @@ namespace oled_ssd1306 {
     //% blockId=serial_read_rx_buffer block="serial|read RX buffer"
     StringData* readSerialRxBuffer() {
       int n = uBit.serial.getRxBufferSize();
-      if (n == 0) return "";
-      return uBit.serial.read(n, MicroBitSerialMode::ASYNC);
+      if (n == 0) ManagedString("").leakData();
+      return ManagedData(uBit.serial.read(n, MicroBitSerialMode::ASYNC)).leakData();
 	}
 
 	
