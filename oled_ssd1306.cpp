@@ -168,14 +168,14 @@ namespace oled_ssd1306 {
 	// initDrawLine2 has to be called first
 	//	
 	//%
-	void drawLine2(int alpha, bool directionOfRotation ) {		
+	void drawLine2(int alpha, int directionOfRotation ) {		
 		
 		// Get direction of rotation
 		int directionOfRotationCoefficient;
 		
-		if (directionOfRotation == true) {
+		if (directionOfRotation == 0) {
 			// alpha is counting clockwise
-			directionOfRotationCoefficient = 1;
+			directionOfRotationCoefficient = -1;
 		}
 		else {
 			// alpha is counting anti-clockwise
@@ -286,6 +286,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
 

@@ -176,7 +176,7 @@ namespace oled_ssd1306 {
 	
 	
     /**
-     * Draws a line on the OLED display from absolute coordinates x0/y0 with width and direction (angle alpha; clockwise [dot=true]/ anticlockwise [dot=false]).
+     * Draws a line on the OLED display from absolute coordinates x0/y0 with width and direction (angle alpha; clockwise / anticlockwise).
 	 * Function init draw line has to be called first!
      * @param alpha - direction of line (in degree). alpha=0 is horizontal.
      */
@@ -274,7 +274,7 @@ namespace oled_ssd1306 {
      /**
      * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20181229-1620"
+    //% blockId=oled_version_id block="version id 20181229-2233"
     //% blockGap=6
     export function versionId(): void {
         return;
@@ -283,6 +283,8 @@ namespace oled_ssd1306 {
 	// #
 	
 }
+
+
 
 
 
