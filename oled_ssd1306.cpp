@@ -171,15 +171,15 @@ namespace oled_ssd1306 {
 	void drawLine2(int alpha, bool directionOfRotation ) {		
 		
 		// Get direction of rotation
-		int directionOfRotation;
+		int directionOfRotationCoefficient;
 		
 		if (directionOfRotation == true) {
 			// alpha is counting clockwise
-			directionOfRotation = 1;
+			directionOfRotationCoefficient = 1;
 		}
 		else {
 			// alpha is counting anti-clockwise
-			directionOfRotation = 1;
+			directionOfRotationCoefficient = 1;
 		}
 		
 		
@@ -190,7 +190,7 @@ namespace oled_ssd1306 {
 		long double gammaRad = gamma * pi / 180;
 		
 		int x1 = (int)(round( drawLine2_x0 + ( drawLine2_width * std::sin(gammaRad))) );
-		int y1 = (int)(round( drawLine2_y0 - ( drawLine2_width * std::sin(alphaRad))) ) * directionOfRotation;
+		int y1 = (int)(round( drawLine2_y0 - ( drawLine2_width * std::sin(alphaRad))) ) * directionOfRotationCoefficient;
 		
 		
 		// Actually draw line
