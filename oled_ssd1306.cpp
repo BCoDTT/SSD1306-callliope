@@ -137,7 +137,7 @@ namespace oled_ssd1306 {
 
 
 	//%
-	void setdrawColor(int color){
+	void setDrawColor(int color){
 		drawColor = color;
 	}
 

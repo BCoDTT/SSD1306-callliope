@@ -46,7 +46,7 @@ namespace oled_ssd1306 {
      * @param on - switch display on or off (boolean); eg: true
      */
     //% blockId=oled_switch_display_to_on block="switch OLED display on %on"
-    //% blockGap=8
+    //% blockGap=12
     //% shim=oled_ssd1306::switchDisplayToOn
     export function switchDisplayToOn(on: boolean = true): void {
         return;
@@ -124,7 +124,7 @@ namespace oled_ssd1306 {
      * @param number - number to display on OLED display
      */
     //% blockId=oled_print_number block="print|number %number"
-    //% blockGap=8
+    //% blockGap=12
     //% shim=oled_ssd1306::printNumber
     export function printNumber(number: number): void {
         return;
@@ -138,7 +138,7 @@ namespace oled_ssd1306 {
      * Set line color for drawing (currently Black or White)
      * @param color    - draw color for lines, boxes etc.; eg: 1
      */
-    //% blockId=oled_set_draw_color block="Set draw color to %color"
+    //% blockId=oled_set_draw_color block="set draw color to %color"
     //% blockGap=6
     //% shim=oled_ssd1306::setDrawColor
     export function setDrawColor(color: Colors) : void {
@@ -264,7 +264,7 @@ namespace oled_ssd1306 {
      * @param percentage   - degree of done
      */
     //% blockId=oled_draw_progress_bar block="draw progress bar with percentage %percentage"
-    //% blockGap=10
+    //% blockGap=12
     //% shim=oled_ssd1306::drawProgressBar
     export function drawProgressBar(percentage: number): void {
         return;
