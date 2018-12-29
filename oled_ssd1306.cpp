@@ -189,8 +189,8 @@ namespace oled_ssd1306 {
 		long double gamma = 90 - alpha;
 		long double gammaRad = gamma * pi / 180;
 		
-		int x1 = (int)(round( drawLine2_x0 + ( drawLine2_width * std::sin(gammaRad))) );
-		int y1 = (int)((round( drawLine2_y0 - ( drawLine2_width * std::sin(alphaRad)))) * directionOfRotationCoefficient);
+		int x1 = (int)(round( drawLine2_x0 + (   drawLine2_width * std::sin(gammaRad) )                                    ) );
+		int y1 = (int)(round( drawLine2_y0 - ( ( drawLine2_width * std::sin(alphaRad) ) * directionOfRotationCoefficient ) ) );
 		
 		
 		// Actually draw line
