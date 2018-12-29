@@ -1,7 +1,7 @@
 {
     "name": "pxt-calliope-oled-ssd1306",
     "version": "1.0.0",
-    "description": "Handles OLED using controller chip SSD1306 for calliope mini (micro:bit) boards in MakeCode (PXT); versionId 20181229-1604",
+    "description": "Handles OLED using controller chip SSD1306 for calliope mini (micro:bit) boards in MakeCode (PXT); versionId 20181229-1620",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -23,3 +23,6 @@
     ],
     "public": true
 }
+
+
+
