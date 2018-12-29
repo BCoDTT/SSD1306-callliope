@@ -180,7 +180,7 @@ namespace oled_ssd1306 {
 	 * Function init draw line has to be called first!
      * @param alpha - direction of line (in degree). alpha=0 is horizontal.
      */
-    //% blockId=oled_drawLine2 block="draw line using angle with alpha %alpha %directionOfRotation"
+    //% blockId=oled_drawLine2 block="draw line using angle with alpha %alpha|%directionOfRotation"
     //% blockGap=6
     //% shim=oled_ssd1306::drawLine2
     export function drawLine2(alpha: number, directionOfRotation: DirectionsOfRotation): void {
@@ -274,7 +274,7 @@ namespace oled_ssd1306 {
      /**
      * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20181229-1300"
+    //% blockId=oled_version_id block="version id 20181229-1353"
     //% blockGap=6
     export function versionId(): void {
         return;

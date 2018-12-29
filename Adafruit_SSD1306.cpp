@@ -119,6 +119,7 @@ void Adafruit_SSD1306::drawPixel(int16_t x, int16_t y, uint16_t color)
     else // else black
         buffer[x+ (y>>3)*_rawWidth] &= ~_BV((y&7)); 
 }
+
 void Adafruit_SSD1306::transposePosition (int16_t &x, int16_t &y) {
 	switch (getRotation())
     {
@@ -136,10 +137,12 @@ void Adafruit_SSD1306::transposePosition (int16_t &x, int16_t &y) {
             break;
     }
 }
+
 void Adafruit_SSD1306::invertDisplay(bool i)
 {
 	command(i ? SSD1306_INVERTDISPLAY : SSD1306_NORMALDISPLAY);
 }
+
 
 // Send the display buffer out to the display
 void Adafruit_SSD1306::display(void)
@@ -150,11 +153,13 @@ void Adafruit_SSD1306::display(void)
 	sendDisplayBuffer();
 }
 
+
 // Clear the display buffer. Requires a display() call at some point afterwards
 void Adafruit_SSD1306::clearDisplay(void)
 {
 	std::fill(buffer.begin(),buffer.end(),0);
 }
+
 
 //Shift the display buffer by (dx, dy)
 void Adafruit_SSD1306::shiftDisplay(int16_t dx, int16_t dy) {
