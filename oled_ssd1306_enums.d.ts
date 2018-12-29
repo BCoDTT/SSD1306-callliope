@@ -10,7 +10,7 @@ declare namespace oled_ssd1306 {
 
 	enum DirectionsOfRotation {
 		"clockwise" = true,
-		"anti-clockwise" = false
+		"anticlockwise" = false
 	}
 }
 
