@@ -6,6 +6,7 @@
 
 namespace oled_ssd1306 {
 
+
   /**
    * micro:bit/calliope OLED:SSD1306 / :PXT blocks
    *
@@ -175,14 +176,14 @@ namespace oled_ssd1306 {
 	
 	
     /**
-     * Draws a line on the OLED display from absolute coordinates x0/y0 with width and direction (angle alpha; anti-clockwise).
+     * Draws a line on the OLED display from absolute coordinates x0/y0 with width and direction (angle alpha; clockwise [dot=true]/ anticlockwise [dot=false]).
 	 * Function init draw line has to be called first!
      * @param alpha - direction of line (in degree). alpha=0 is horizontal.
      */
-    //% blockId=oled_drawLine2 block="draw line using angle with alpha %alpha"
+    //% blockId=oled_drawLine2 block="draw line using angle with alpha %alpha %directionOfRotation"
     //% blockGap=6
     //% shim=oled_ssd1306::drawLine2
-    export function drawLine2(alpha: number): void {
+    export function drawLine2(alpha: number, directionOfRotation: DirectionsOfRotation): void {
         return;
     }
 	

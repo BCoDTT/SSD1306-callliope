@@ -142,6 +142,8 @@ namespace oled_ssd1306 {
 	}
 
 	
+	// Draw a line defined by start x0/y0 and end x1/y1 coordinates
+	//
 	//%
 	void drawLine(int x0, int y0, int x1, int y1) {
 		oled->drawLine(x0, y0, x1, y1, drawColor);
@@ -151,6 +153,8 @@ namespace oled_ssd1306 {
 	}
 
 	
+	// Init draw a line defined by start x0/y0, width and an angle referring to horizontal
+	//
 	//%
 	void initDrawLine2(int x0, int y0, int width) {		
 		
@@ -159,18 +163,37 @@ namespace oled_ssd1306 {
 		drawLine2_width = width;
 	}
 	
-		
+
+	// Draw a line defined by start x0/y0, width and an angle referring to horizontal clock/anti-clockwise
+	// initDrawLine2 has to be called first
+	//	
 	//%
-	void drawLine2(int alpha) {		
+	void drawLine2(int alpha, bool directionOfRotation ) {		
 		
+		// Get direction of rotation
+		int directionOfRotation;
+		
+		if (directionOfRotation == true) {
+			// alpha is counting clockwise
+			directionOfRotation = 1;
+		}
+		else {
+			// alpha is counting anti-clockwise
+			directionOfRotation = 1;
+		}
+		
+		
+		// Calculate end coordinate x1/y1
 		long double alphaRad = alpha * pi / 180;
 		
 		long double gamma = 90 - alpha;
 		long double gammaRad = gamma * pi / 180;
 		
 		int x1 = (int)(round( drawLine2_x0 + ( drawLine2_width * std::sin(gammaRad))) );
-		int y1 = (int)(round( drawLine2_y0 - ( drawLine2_width * std::sin(alphaRad))) );
+		int y1 = (int)(round( drawLine2_y0 - ( drawLine2_width * std::sin(alphaRad))) ) * directionOfRotation;
 		
+		
+		// Actually draw line
 		oled->drawLine(drawLine2_x0, drawLine2_y0, x1, y1, drawColor);
 		
 		if(oled->isDisplay) {
