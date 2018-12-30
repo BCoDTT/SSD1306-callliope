@@ -195,7 +195,7 @@ namespace oled_ssd1306 {
 		
 		// Actually draw line
 		oled->drawLine(drawLine2_x0, drawLine2_y0, x1, y1, drawColor);
-		l
+		
 		if(oled->isDisplay) {
 			oled->display();
 		}
@@ -286,5 +286,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
+
 
 
