@@ -175,7 +175,7 @@ namespace oled_ssd1306 {
 		
 		if (directionOfRotation == 0) {
 			// alpha is counting clockwise
-			directionOfRotationCoefficient = -1;
+			directionOfRotationCoefficient = 1;
 		}
 		else {
 			// alpha is counting anti-clockwise
@@ -186,16 +186,16 @@ namespace oled_ssd1306 {
 		// Calculate end coordinate x1/y1
 		long double alphaRad = alpha * pi / 180;
 		
-		long double gamma = 90 - alpha;
-		long double gammaRad = gamma * pi / 180;
+		long double beta = 90 - alpha;
+		long double betaRad = beta * pi / 180;
 		
-		int x1 = (int)(round( drawLine2_x0 + (   drawLine2_width * std::sin(gammaRad) )                                    ) );
-		int y1 = (int)(round( drawLine2_y0 - ( ( drawLine2_width * std::sin(alphaRad) ) * directionOfRotationCoefficient ) ) );
+		int x1 = (int)(round( drawLine2_x0 + ( ( drawLine2_width * std::sin(alphaRad) ) * directionOfRotationCoefficient ) ) );
+		int y1 = (int)(round( drawLine2_y0 + (   drawLine2_width * std::sin(betaRad)  )                                    ) );
 		
 		
 		// Actually draw line
 		oled->drawLine(drawLine2_x0, drawLine2_y0, x1, y1, drawColor);
-		
+		l
 		if(oled->isDisplay) {
 			oled->display();
 		}
@@ -286,3 +286,5 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
+
