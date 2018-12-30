@@ -175,7 +175,7 @@ namespace oled_ssd1306 {
 		
 		if (directionOfRotation == 0) {
 			// alpha is counting clockwise
-			directionOfRotationCoefficient = 1;
+			directionOfRotationCoefficient = -1;
 		}
 		else {
 			// alpha is counting anti-clockwise
@@ -189,8 +189,8 @@ namespace oled_ssd1306 {
 		long double beta = 90 - alpha;
 		long double betaRad = beta * pi / 180;
 		
-		int x1 = (int)(round( drawLine2_x0 + ( ( drawLine2_width * std::sin(alphaRad) ) * directionOfRotationCoefficient ) ) );
-		int y1 = (int)(round( drawLine2_y0 + (   drawLine2_width * std::sin(betaRad)  )                                    ) );
+		int x1 = (int)(round( drawLine2_x0 + ( ( drawLine2_width * std::sin(alphaRad) ) * 1                              ) ) );
+		int y1 = (int)(round( drawLine2_y0 + ( ( drawLine2_width * std::sin(betaRad)  ) * directionOfRotationCoefficient ) ) );
 		
 		
 		// Actually draw line
