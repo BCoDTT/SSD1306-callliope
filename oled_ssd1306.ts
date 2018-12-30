@@ -274,7 +274,7 @@ namespace oled_ssd1306 {
      /**
      * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20181231-0012"
+    //% blockId=oled_version_id block="version id 20181231-0051"
     //% blockGap=6
     export function versionId(): void {
         return;
@@ -283,4 +283,3 @@ namespace oled_ssd1306 {
 	// #
 	
 }
-
