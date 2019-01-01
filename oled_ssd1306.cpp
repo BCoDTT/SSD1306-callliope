@@ -327,7 +327,22 @@ namespace oled_ssd1306 {
 	//%
 	void drawBitmap(int x0, int y0) {
 
-		oled->drawBitmap(x0, y0, *bmpName, bmpWidth, bmpHeight, drawColor);
+		unsigned char *bmpData;
+		
+		if ( bmpName->data == "SmileyHappy"
+			*bmpData = smiley_happy[];
+		}
+		else if ( bmpName->data == "SmileyNeutral" ) {
+			*bmpData = smiley_neutral[];
+		}
+		else if ( bmpName->data == "SmileySad" ) {
+			*bmpData = smiley_sad[];
+		}
+		else {
+				return;
+		}
+		
+		oled->drawBitmap(x0, y0, *bmpData, bmpWidth, bmpHeight, drawColor);
 
 		if(oled->isDisplay) {
 			oled->display();
