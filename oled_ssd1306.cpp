@@ -1,6 +1,7 @@
 
 #include "pxt.h"
 #include "Adafruit_SSD1306.h"
+#include "Image_Bitmaps.h"
 #include <cmath>
 
 
@@ -53,6 +54,14 @@ namespace oled_ssd1306 {
 	bool rectangleFilled = false;
 	int rectangleEdgeRadius = 0;
 
+	// Variables for bitmaps
+	StringData *bmpName = "";
+	int bmpWidth = 20;
+	int bmpHeight = 20;
+	
+    
+
+	
 	
 	
 	// ################################## Functions ########################################################################
@@ -267,6 +276,9 @@ namespace oled_ssd1306 {
 		}				
 	}
 	
+
+	// ### Drawing of a progress bar ######################################################################
+
 	
 	//%
 	void initProgressBar(int x0, int y0, int width, int height) {
@@ -297,7 +309,35 @@ namespace oled_ssd1306 {
 
 	}
 
+
+	// ### Drawing of a bitmap ######################################################################
+
 	
+	//%
+	void initBitmap(StringData *name, int width, int height) {
+		*bmpName = *name;
+		int bmpWidth = width;
+		int bmpHeight = height;	
+	}
+	
+	
+    void drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color);
+
+	
+	//%
+	void drawBitmap(int x0, int y0) {
+
+		oled->drawBitmap(x0, y0, *bmpName, bmpWidth, bmpHeight, drawColor);
+
+		if(oled->isDisplay) {
+			oled->display();
+		}						
+
+	}	
+		
+		
+		
+	// ### That's all ###############################################################################
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }

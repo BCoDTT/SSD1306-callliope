@@ -243,7 +243,10 @@ namespace oled_ssd1306 {
         return;
     }
 	
- 
+
+	// ### Drawing a progressbar ######################################################################
+
+		
      /**
      * Init a progress bar on position x/y with width w, height h
      * @param x0         - x-position of left lower corner (in pixels); eg: 34
@@ -260,7 +263,7 @@ namespace oled_ssd1306 {
  
 
      /**
-     * Show a progress bar with percentage of progress. initProgressBar must be called prior to this call!
+     * Draw a progress bar with percentage of progress. initProgressBar must be called prior to this call!
      * @param percentage   - degree of done
      */
     //% blockId=oled_draw_progress_bar block="draw progress bar with percentage %percentage"
@@ -271,10 +274,43 @@ namespace oled_ssd1306 {
     }
    
    
+   	// ### Drawing a bitmap ######################################################################
+
+	
+     /**
+     * Init a bitmap with ref to name and width/height
+     * @param nameRef   - nameRef of bitmap to draw
+     * @param width     - width of bitmap to draw (in pixels); eg: 40
+     * @param height    - height of bitmap to draw (in pixels; eg: 40
+     */
+    //% blockId=oled_init_bitmap block="init bitmap with name %nameRef|width %width|height %height"
+    //% blockGap=6
+    //% shim=oled_ssd1306::initBitmap
+    export function initBitmap(nameRef: string, width: number, height: number): void {
+        return;
+    }
+ 
+
+     /**
+     * Draw a bitmap at position xp/y0 with draw color. initBitmap must be called prior to this call!
+     * @param x0         - x-position of left lower corner (in pixels); eg: 31
+     * @param y0         - y-position of left lower corner (in pixels); eg: 63
+     */
+    //% blockId=oled_draw_bitmap block="draw bitmap x0 %x0|y0 %y0"
+    //% blockGap=12
+    //% shim=oled_ssd1306::drawBitmap
+    export function drawBitmap(x0 : number, y0 : number): void {
+        return;
+    } 
+   
+   
+   	// ### Version info ######################################################################
+   
+   
      /**
      * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20190101-2316"
+    //% blockId=oled_version_id block="version id 20190102-0016"
     //% blockGap=6
     export function versionId(): void {
         return;
