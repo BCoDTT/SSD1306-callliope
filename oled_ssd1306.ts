@@ -114,7 +114,7 @@ namespace oled_ssd1306 {
     //% blockId=oled_print_string block="print|string %text | %newLine"
     //% blockGap=6
     //% shim=oled_ssd1306::printString
-    export function printString(text: string, newLine : PrintStringModes): void {
+    export function printString(text: string, newLine : PrintModes): void {
         return;
     }
 
@@ -123,10 +123,10 @@ namespace oled_ssd1306 {
      * Prints a number on the OLED display at the current text cursor position
      * @param number - number to display on OLED display
      */
-    //% blockId=oled_print_number block="print|number %number"
+    //% blockId=oled_print_number block="print|number %number | %newLine"
     //% blockGap=12
     //% shim=oled_ssd1306::printNumber
-    export function printNumber(number: number): void {
+    export function printNumber(number: number, newLine : PrintModes): void {
         return;
     }
 
@@ -274,7 +274,7 @@ namespace oled_ssd1306 {
      /**
      * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20190101-1743"
+    //% blockId=oled_version_id block="version id 20190101-2316"
     //% blockGap=6
     export function versionId(): void {
         return;

@@ -121,9 +121,11 @@ namespace oled_ssd1306 {
 	
 	//%
 	void printString(StringData *text, int newLine) {
-		if ( newLine == 1 ) {
+		
+		if ( newLine == 0 ) {
 			oled->printf("%s\n", text->data);
 		}
+		else {
 			oled->printf("%s", text->data);
 		}
 
@@ -132,9 +134,17 @@ namespace oled_ssd1306 {
     
 	
 	//%
-	void printNumber(int number) {
-		oled->printf("%d\n", number);
+	void printNumber(int number, int newLine) {
+		
+		if ( newLine == 0 ) {
+			oled->printf("%d\n", number);
+		}
+		else {
+			oled->printf("%d", number);
+		}
+		
 		oled->display();
+		
 	}
     
 
