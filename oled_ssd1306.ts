@@ -87,7 +87,7 @@ namespace oled_ssd1306 {
      * @param row       - row
      * @param column    - column
      */
-    //% blockId=oled_settextcursor_row_col block="set text cursor to row %row|column %column"
+    //% blockId=oled_settextcursor_row_col block="set text cursor to row %row | column %column"
     //% blockGap=6
     //% shim=oled_ssd1306::setTextCursorRowColumn
     export function setTextCursorRowColumn(row: number, column: number): void {
@@ -111,10 +111,10 @@ namespace oled_ssd1306 {
      * Prints a string on the OLED display at the current text cursor position
      * @param text - text to display on OLED display
      */
-    //% blockId=oled_print_string block="print|string %text"
+    //% blockId=oled_print_string block="print|string %text | %newLine"
     //% blockGap=6
     //% shim=oled_ssd1306::printString
-    export function printString(text: string): void {
+    export function printString(text: string, newLine : PrintStringModes): void {
         return;
     }
 
@@ -274,7 +274,7 @@ namespace oled_ssd1306 {
      /**
      * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20181231-0051"
+    //% blockId=oled_version_id block="version id 20190101-1743"
     //% blockGap=6
     export function versionId(): void {
         return;

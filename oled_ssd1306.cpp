@@ -120,8 +120,13 @@ namespace oled_ssd1306 {
 	
 	
 	//%
-	void printString(StringData *text) {
-		oled->printf("%s\n", text->data);
+	void printString(StringData *text, int newLine) {
+		if ( newLine == 1 ) {
+			oled->printf("%s\n", text->data);
+		}
+			oled->printf("%s", text->data);
+		}
+
 		oled->display();
 	}
     

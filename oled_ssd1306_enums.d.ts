@@ -12,4 +12,10 @@ declare namespace oled_ssd1306 {
 		clockwise = 0,
 		anticlockwise = 1
 	}
+	
+	enum PrintStringModes {
+		withNewline = 0,
+		withoutNewLine = 1
+	}
+	
 }
