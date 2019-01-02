@@ -330,7 +330,7 @@ namespace oled_ssd1306 {
 		
 		// Adjust pointer to bitmap set in initBitmap
 		// Bitmaps are defined in Bitmaps.h
-		case(bmpNamesVal) {
+		switch(bmpNamesVal) {
 			case 1:  bmpPtr = smiley_happy; break;
 			case 2:  bmpPtr = smiley_neutral; break;
 			case 3:  bmpPtr = smiley_sad; break;
@@ -345,7 +345,7 @@ namespace oled_ssd1306 {
 
 		
 		// Acutally draw bitmap
-		oled->drawBitmap(x0, y0, ptr, bmpWidth, bmpHeight, drawColor);
+		oled->drawBitmap(x0, y0, bmpPtr, bmpWidth, bmpHeight, drawColor);
 
 		if(oled->isDisplay) {
 			oled->display();
@@ -359,6 +359,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
 
