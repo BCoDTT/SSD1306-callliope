@@ -325,22 +325,25 @@ namespace oled_ssd1306 {
 	//%
 	void drawBitmap(int x0, int y0) {
 
-		unsigned short bmpData[];
+		const uint8_t * const bmpPointer;
 		
 		if ( strcmp(bmpName, "SmileyHappy") == 0 ) {
-			bmpData = smiley_happy[];
+			//bmpData = smiley_happy[];
+			const uint8_t * const bmpPointer = smiley_happy;
 		}
 		else if ( strcmp(bmpName, "SmileyNeutral") == 0 ) {
-			bmpData = smiley_neutral[];
+			//bmpData = smiley_neutral[];
+			const uint8_t * const bmpPointer = smiley_neuetral;
 		}
 		else if ( strcmp(bmpName, "SmileySad") == 0 ) {
-			bmpData = smiley_sad[];
+			//bmpData = smiley_sad[];
+			const uint8_t * const bmpPointer = smiley_sad;
 		}
 		else {
 				return;
 		}
 		
-		oled->drawBitmap(x0, y0, *bmpData, bmpWidth, bmpHeight, drawColor);
+		oled->drawBitmap(x0, y0, bmpPointer, bmpWidth, bmpHeight, drawColor);
 
 		if(oled->isDisplay) {
 			oled->display();
@@ -354,5 +357,6 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
