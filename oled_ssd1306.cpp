@@ -56,7 +56,7 @@ namespace oled_ssd1306 {
 	int rectangleEdgeRadius = 0;
 
 	// Variables for bitmaps
-	std::string bmpName = "";
+	char bmpName[] = "";
 	int bmpWidth = 20;
 	int bmpHeight = 20;
 	
@@ -354,4 +354,5 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
