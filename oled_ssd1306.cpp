@@ -3,6 +3,7 @@
 #include "Adafruit_SSD1306.h"
 #include "Image_Bitmaps.h"
 #include <cmath>
+#include <string>
 
 
 using namespace pxt;
@@ -55,7 +56,7 @@ namespace oled_ssd1306 {
 	int rectangleEdgeRadius = 0;
 
 	// Variables for bitmaps
-	StringData *bmpName;
+	std::string bmpName = "";
 	int bmpWidth = 20;
 	int bmpHeight = 20;
 	
@@ -315,7 +316,7 @@ namespace oled_ssd1306 {
 	
 	//%
 	void initBitmap(StringData *name, int width, int height) {
-		bmpName = *name;
+		bmpName = *name->data;
 		bmpWidth = width;
 		bmpHeight = height;	
 	}
@@ -324,15 +325,15 @@ namespace oled_ssd1306 {
 	//%
 	void drawBitmap(int x0, int y0) {
 
-		unsigned char *bmpData = NULL;
+		unsigned short bmpData[];
 		
-		if ( bmpName->data == "SmileyHappy" ) {
+		if ( strcmp(bmpName, "SmileyHappy") == 0 ) {
 			bmpData = smiley_happy[];
 		}
-		else if ( bmpName->data == "SmileyNeutral" ) {
+		else if ( strcmp(bmpName, "SmileyNeutral") == 0 ) {
 			bmpData = smiley_neutral[];
 		}
-		else if ( bmpName->data == "SmileySad" ) {
+		else if ( strcmp(bmpName, "SmileySad") == 0 ) {
 			bmpData = smiley_sad[];
 		}
 		else {
@@ -353,5 +354,4 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
-
 
