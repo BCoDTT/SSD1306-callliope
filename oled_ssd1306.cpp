@@ -321,15 +321,12 @@ namespace oled_ssd1306 {
 	}
 	
 	
-    void drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color);
-
-	
 	//%
 	void drawBitmap(int x0, int y0) {
 
 		unsigned char *bmpData;
 		
-		if ( bmpName->data == "SmileyHappy"
+		if ( bmpName->data == "SmileyHappy" ) {
 			*bmpData = smiley_happy[];
 		}
 		else if ( bmpName->data == "SmileyNeutral" ) {
@@ -356,3 +353,5 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
+
