@@ -316,7 +316,7 @@ namespace oled_ssd1306 {
 	
 	//%
 	void initBitmap(StringData *name, int width, int height) {
-		bmpName = *name->data;
+		bmpName = name->data;
 		bmpWidth = width;
 		bmpHeight = height;	
 	}
@@ -325,7 +325,7 @@ namespace oled_ssd1306 {
 	//%
 	void drawBitmap(int x0, int y0) {
 
-		uint8_t *bmpptr;
+		const uint8_t *bmpptr;
 		
 		if ( strcmp(bmpName, "SmileyHappy") == 0 ) {
 			//bmpData = smiley_happy[];
@@ -357,6 +357,8 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
+
 
 
 
