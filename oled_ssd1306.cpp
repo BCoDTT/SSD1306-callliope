@@ -130,7 +130,7 @@ namespace oled_ssd1306 {
 	
 	
 	//%
-	void bString(StringData *text, int newLine) {
+	void printString(StringData *text, int newLine) {
 		
 		if ( newLine == 0 ) {
 			oled->printf("%s\n", text->data);
@@ -325,7 +325,8 @@ namespace oled_ssd1306 {
 	//%
 	void drawBitmap(int x0, int y0) {
 
-		const uint8_t *bmpptr;
+		extern uint8_t smiley_happy[];
+		uint8_t bmp;
 		
 		if ( strcmp(bmpName.c_str(), "SmileyHappy") == 0 ) {
 			//bmpData = smiley_happy[];
@@ -357,6 +358,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
 
