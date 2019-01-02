@@ -55,7 +55,7 @@ namespace oled_ssd1306 {
 	int rectangleEdgeRadius = 0;
 
 	// Variables for bitmaps
-	StringData *bmpName = "";
+	StringData *bmpName;
 	int bmpWidth = 20;
 	int bmpHeight = 20;
 	
@@ -129,7 +129,7 @@ namespace oled_ssd1306 {
 	
 	
 	//%
-	void printString(StringData *text, int newLine) {
+	void bString(StringData *text, int newLine) {
 		
 		if ( newLine == 0 ) {
 			oled->printf("%s\n", text->data);
@@ -315,25 +315,25 @@ namespace oled_ssd1306 {
 	
 	//%
 	void initBitmap(StringData *name, int width, int height) {
-		*bmpName = *name;
-		int bmpWidth = width;
-		int bmpHeight = height;	
+		bmpName = *name;
+		bmpWidth = width;
+		bmpHeight = height;	
 	}
 	
 	
 	//%
 	void drawBitmap(int x0, int y0) {
 
-		unsigned char *bmpData;
+		unsigned char *bmpData = NULL;
 		
 		if ( bmpName->data == "SmileyHappy" ) {
-			*bmpData = smiley_happy[];
+			bmpData = smiley_happy[];
 		}
 		else if ( bmpName->data == "SmileyNeutral" ) {
-			*bmpData = smiley_neutral[];
+			bmpData = smiley_neutral[];
 		}
 		else if ( bmpName->data == "SmileySad" ) {
-			*bmpData = smiley_sad[];
+			bmpData = smiley_sad[];
 		}
 		else {
 				return;
@@ -353,5 +353,4 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
-
 
