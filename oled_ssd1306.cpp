@@ -343,7 +343,7 @@ namespace oled_ssd1306 {
 				return;
 		}
 		
-		oled->drawBitmap(x0, y0, bmpptr, bmpWidth, bmpHeight, drawColor);
+		oled->drawBitmap(x0, y0, smiley_happy, bmpWidth, bmpHeight, drawColor);
 
 		if(oled->isDisplay) {
 			oled->display();
