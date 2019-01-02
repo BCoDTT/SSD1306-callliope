@@ -326,23 +326,25 @@ namespace oled_ssd1306 {
 	void drawBitmap(int x0, int y0) {
 
 		//uint8_t smiley_happy[];
-		uint8_t bmp;
+		//uint8_t bmp;
 		
+		/*
 		if ( strcmp(bmpName.c_str(), "SmileyHappy") == 0 ) {
 			//bmpData = smiley_happy[];
-			bmpptr = *&smiley_happy;
+			//bmpptr = *&smiley_happy;
 		}
 		else if ( strcmp(bmpName.c_str(), "SmileyNeutral") == 0 ) {
 			//bmpData = smiley_neutral[];
-			bmpptr = *&smiley_neutral;
+			//bmpptr = *&smiley_neutral;
 		}
 		else if ( strcmp(bmpName.c_str(), "SmileySad") == 0 ) {
 			//bmpData = smiley_sad[];
-			bmpptr = *&smiley_sad;
+			//bmpptr = *&smiley_sad;
 		}
 		else {
 				return;
 		}
+		*/
 		
 		// Adafruit_GFX.cpp: void Adafruit_GFX::drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color)
 		// Image_Bitmaps.h: const unsigned char  smiley_happy[] = {
@@ -363,6 +365,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
 
