@@ -343,7 +343,7 @@ namespace oled_ssd1306 {
 				return;
 		}
 		
-		oled->drawBitmap(x0, y0, *smiley_happy, bmpWidth, bmpHeight, drawColor);
+		oled->drawBitmap(x0, y0, smiley_happy&, bmpWidth, bmpHeight, drawColor);
 
 		if(oled->isDisplay) {
 			oled->display();
@@ -357,6 +357,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
 
