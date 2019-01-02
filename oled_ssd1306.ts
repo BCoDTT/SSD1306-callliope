@@ -278,15 +278,15 @@ namespace oled_ssd1306 {
 
 	
      /**
-     * Init a bitmap with ref to name and width/height
-     * @param nameRef   - nameRef of bitmap to draw
-     * @param width     - width of bitmap to draw (in pixels); eg: 40
-     * @param height    - height of bitmap to draw (in pixels; eg: 40
+     * Init a bitmap with enum entry id and width/height
+     * @param bitmapEnumId	- nameRef of bitmap to draw; eg: 0
+     * @param width			- width of bitmap to draw (in pixels); eg: 56
+     * @param height    	- height of bitmap to draw (in pixels; eg: 56
      */
-    //% blockId=oled_init_bitmap block="init bitmap with name %nameRef|width %width|height %height"
+    //% blockId=oled_init_bitmap block="init bitmap %bitmapEnumId |width %width | height %height"
     //% blockGap=6
     //% shim=oled_ssd1306::initBitmap
-    export function initBitmap(nameRef: string, width: number, height: number): void {
+    export function initBitmap(bitmapEnumId: BitmapNames, width: number, height: number): void {
         return;
     }
  
@@ -310,7 +310,7 @@ namespace oled_ssd1306 {
      /**
      * Indicates versionId
      */
-    //% blockId=oled_version_id block="version id 20190102-1653"
+    //% blockId=oled_version_id block="version id 20190102-2059"
     //% blockGap=6
     export function versionId(): void {
         return;

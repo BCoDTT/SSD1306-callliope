@@ -4,8 +4,8 @@
 declare namespace oled_ssd1306 {
 
 	enum Colors {
-		Black = 0,
-		White = 1
+		black = 0,
+		white = 1
 	}
 
 	enum DirectionsOfRotation {
@@ -18,6 +18,14 @@ declare namespace oled_ssd1306 {
 		withoutNewLine = 1
 	}
 	
+	enum BitmapNames {
+		smiley_happy = 1,
+		smiley_neutral = 2,
+		smiley_sad = 3,
+		smiley_laughing = 4,
+		smiley_angry = 5,
+		logo_t_it_at_school = 99
+	}
 }
 
 

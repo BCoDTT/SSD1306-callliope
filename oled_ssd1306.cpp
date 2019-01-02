@@ -56,7 +56,7 @@ namespace oled_ssd1306 {
 	int rectangleEdgeRadius = 0;
 
 	// Variables for bitmaps
-	string bmpName;
+	int bmpNamesVal = 0;
 	int bmpWidth = 20;
 	int bmpHeight = 20;
 	
@@ -315,8 +315,9 @@ namespace oled_ssd1306 {
 
 	
 	//%
-	void initBitmap(StringData *name, int width, int height) {
-		bmpName = name->data;
+	void initBitmap(int bitmapNamesVal, int width, int height) {
+		// bmpNameVal is from enum BitmapNames
+		bmpNamesVal = bitmapNamesVal;
 		bmpWidth = width;
 		bmpHeight = height;	
 	}
@@ -325,32 +326,25 @@ namespace oled_ssd1306 {
 	//%
 	void drawBitmap(int x0, int y0) {
 
-		//uint8_t smiley_happy[];
-		//uint8_t bmp;
+		const unsigned char * bmpPtr;
 		
-		/*
-		if ( strcmp(bmpName.c_str(), "SmileyHappy") == 0 ) {
-			//bmpData = smiley_happy[];
-			//bmpptr = *&smiley_happy;
+		// Adjust pointer to bitmap set in initBitmap
+		// Bitmaps are defined in Bitmaps.h
+		case(bmpNamesVal) {
+			case 1:  bmpPtr = smiley_happy; break;
+			case 2:  bmpPtr = smiley_neutral; break;
+			case 3:  bmpPtr = smiley_sad; break;
+			case 4:  bmpPtr = smiley_laughing; break;
+			case 5:  bmpPtr = smiley_angry; break;
+			case 99: bmpPtr = logo_telekom_it_at_school; break;	
+			default: return; break;
 		}
-		else if ( strcmp(bmpName.c_str(), "SmileyNeutral") == 0 ) {
-			//bmpData = smiley_neutral[];
-			//bmpptr = *&smiley_neutral;
-		}
-		else if ( strcmp(bmpName.c_str(), "SmileySad") == 0 ) {
-			//bmpData = smiley_sad[];
-			//bmpptr = *&smiley_sad;
-		}
-		else {
-				return;
-		}
-		*/
 		
 		// Adafruit_GFX.cpp: void Adafruit_GFX::drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color)
 		// Image_Bitmaps.h: const unsigned char  smiley_happy[] = {
-			
-		const unsigned char * ptr;
-		ptr = smiley_happy;
+
+		
+		// Acutally draw bitmap
 		oled->drawBitmap(x0, y0, ptr, bmpWidth, bmpHeight, drawColor);
 
 		if(oled->isDisplay) {
@@ -365,6 +359,7 @@ namespace oled_ssd1306 {
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
 
 }
+
 
 
 
